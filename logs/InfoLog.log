@@ -1,0 +1,6 @@
+[2026-08-08 23:49:32,228] #INFO     dispatcher.py:527 - aiogram.dispatcher - Start polling
+[2026-08-08 23:49:42,845] #INFO     dispatcher.py:341 - aiogram.dispatcher - Run polling for bot @PyRushBot id=8767157717 - 'PyRush'
+[2026-08-08 23:51:33,557] #INFO     dispatcher.py:554 - aiogram.dispatcher - Polling stopped
+[2026-08-08 23:51:33,828] #INFO     dispatcher.py:359 - aiogram.dispatcher - Polling stopped for bot @PyRushBot id=8767157717 - 'PyRush'
+[2026-08-08 23:54:47,217] #INFO     dispatcher.py:527 - aiogram.dispatcher - Start polling
+[2026-08-08 23:55:47,240] #INFO     dispatcher.py:554 - aiogram.dispatcher - Polling stopped

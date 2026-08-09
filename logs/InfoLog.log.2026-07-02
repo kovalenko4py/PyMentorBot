@@ -1,0 +1,580 @@
+[2026-07-02 00:50:16,551] #INFO     talk.py:34 - root - Отладка: метод command_choose_famous_person |
+[2026-07-02 00:50:16,733] #INFO     dispatcher.py:178 - aiogram.event - Update id=199579888 is handled. Duration 184 ms by bot id=8767157717
+[2026-07-02 00:50:18,546] #INFO     talk.py:43 - root - Отладка: метод callback_choosing_famous_person | Socrates
+[2026-07-02 00:50:18,797] #INFO     dispatcher.py:178 - aiogram.event - Update id=199579889 is handled. Duration 252 ms by bot id=8767157717
+[2026-07-02 00:50:27,588] #INFO     _client.py:1740 - httpx - HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 402 Payment Required"
+[2026-07-02 00:50:27,591] #INFO     dispatcher.py:178 - aiogram.event - Update id=199579890 is not handled. Duration 825 ms by bot id=8767157717
+[2026-07-02 00:50:27,591] #ERROR    dispatcher.py:325 - aiogram.event - Cause exception while process update id=199579890 by bot id=8767157717
+APIStatusError: Error code: 402 - {'error': {'message': 'Insufficient Balance', 'type': 'unknown_error', 'param': None, 'code': 'invalid_request_error'}}
+Traceback (most recent call last):
+  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 320, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 164, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 27, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 58, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\fsm\middleware.py", line 43, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 126, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 71, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 283, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 165, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 157, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 193, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 165, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 157, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 185, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 126, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 71, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\handlers\talk.py", line 69, in answer_famous_person
+        await message.answer(f'Держи ответ:\n{answer}',reply_markup=inline_keyboard_undo)
+                 ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    
+    
+    
+    
+    # отладка
+    ~~~~
+  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\services\chat_deepseek.py", line 10, in ask_deepseek
+    response = await self.client.chat.completions.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<8 lines>...
+    )
+    ^
+  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\openai\resources\chat\completions\completions.py", line 2814, in create
+    return await self._post(
+           ^^^^^^^^^^^^^^^^^
+    ...<54 lines>...
+    )
+    ^
+  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\openai\_base_client.py", line 1931, in post
+    return await self.request(cast_to, opts, stream=stream, stream_cls=stream_cls)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\openai\_base_client.py", line 1716, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.APIStatusError: Error code: 402 - {'error': {'message': 'Insufficient Balance', 'type': 'unknown_error', 'param': None, 'code': 'invalid_request_error'}}
+[2026-07-02 01:05:18,327] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientOSError: [WinError 1236] Подключение к сети было разорвано локальной системой
+[2026-07-02 01:05:18,328] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8767157717)
+[2026-07-02 01:06:21,366] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Превышен таймаут семафора]
+[2026-07-02 01:06:21,366] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 1.403095 seconds and try again... (tryings = 1, bot id = 8767157717)
+[2026-07-02 01:07:24,832] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Превышен таймаут семафора]
+[2026-07-02 01:07:24,833] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 2.007669 seconds and try again... (tryings = 2, bot id = 8767157717)
+[2026-07-02 01:08:28,901] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Превышен таймаут семафора]
+[2026-07-02 01:08:28,902] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 2.755123 seconds and try again... (tryings = 3, bot id = 8767157717)
+[2026-07-02 01:09:33,708] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Превышен таймаут семафора]
+[2026-07-02 01:09:33,708] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 3.607643 seconds and try again... (tryings = 4, bot id = 8767157717)
+[2026-07-02 01:10:39,377] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Превышен таймаут семафора]
+[2026-07-02 01:10:39,378] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 4.784788 seconds and try again... (tryings = 5, bot id = 8767157717)
+[2026-07-02 01:11:46,218] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Превышен таймаут семафора]
+[2026-07-02 01:11:46,219] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 5.256710 seconds and try again... (tryings = 6, bot id = 8767157717)
+[2026-07-02 01:12:53,500] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Превышен таймаут семафора]
+[2026-07-02 01:12:53,500] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 5.005819 seconds and try again... (tryings = 7, bot id = 8767157717)
+[2026-07-02 01:14:00,532] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Превышен таймаут семафора]
+[2026-07-02 01:14:00,532] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 5.048671 seconds and try again... (tryings = 8, bot id = 8767157717)
+[2026-07-02 01:15:07,635] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Превышен таймаут семафора]
+[2026-07-02 01:15:07,635] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 5.098325 seconds and try again... (tryings = 9, bot id = 8767157717)
+[2026-07-02 01:16:14,792] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Превышен таймаут семафора]
+[2026-07-02 01:16:14,792] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 4.957339 seconds and try again... (tryings = 10, bot id = 8767157717)
+[2026-07-02 01:17:21,798] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Превышен таймаут семафора]
+[2026-07-02 01:17:21,799] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 5.006029 seconds and try again... (tryings = 11, bot id = 8767157717)
+[2026-07-02 01:18:28,869] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Превышен таймаут семафора]
+[2026-07-02 01:18:28,870] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 4.966297 seconds and try again... (tryings = 12, bot id = 8767157717)
+[2026-07-02 01:19:35,877] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Превышен таймаут семафора]
+[2026-07-02 01:19:35,877] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 5.037889 seconds and try again... (tryings = 13, bot id = 8767157717)
+[2026-07-02 01:20:42,958] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Превышен таймаут семафора]
+[2026-07-02 01:20:42,958] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 4.951217 seconds and try again... (tryings = 14, bot id = 8767157717)
+[2026-07-02 01:21:49,962] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Превышен таймаут семафора]
+[2026-07-02 01:21:49,962] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 5.027048 seconds and try again... (tryings = 15, bot id = 8767157717)
+[2026-07-02 01:22:57,037] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Превышен таймаут семафора]
+[2026-07-02 01:22:57,038] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 4.997512 seconds and try again... (tryings = 16, bot id = 8767157717)
+[2026-07-02 01:24:04,068] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Превышен таймаут семафора]
+[2026-07-02 01:24:04,068] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 4.934565 seconds and try again... (tryings = 17, bot id = 8767157717)
+[2026-07-02 01:25:11,033] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Превышен таймаут семафора]
+[2026-07-02 01:25:11,033] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 4.899855 seconds and try again... (tryings = 18, bot id = 8767157717)
+[2026-07-02 01:26:17,981] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Превышен таймаут семафора]
+[2026-07-02 01:26:17,982] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 5.025582 seconds and try again... (tryings = 19, bot id = 8767157717)
+[2026-07-02 01:27:25,061] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Превышен таймаут семафора]
+[2026-07-02 01:27:25,061] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 5.128169 seconds and try again... (tryings = 20, bot id = 8767157717)
+[2026-07-02 01:28:32,228] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Превышен таймаут семафора]
+[2026-07-02 01:28:32,228] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 5.089056 seconds and try again... (tryings = 21, bot id = 8767157717)
+[2026-07-02 01:29:39,384] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Превышен таймаут семафора]
+[2026-07-02 01:29:39,384] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 5.078379 seconds and try again... (tryings = 22, bot id = 8767157717)
+[2026-07-02 01:30:46,521] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Превышен таймаут семафора]
+[2026-07-02 01:30:46,521] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 4.976054 seconds and try again... (tryings = 23, bot id = 8767157717)
+[2026-07-02 01:31:53,550] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Превышен таймаут семафора]
+[2026-07-02 01:31:53,551] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 5.084267 seconds and try again... (tryings = 24, bot id = 8767157717)
+[2026-07-02 01:33:00,678] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Превышен таймаут семафора]
+[2026-07-02 01:33:00,678] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 4.969767 seconds and try again... (tryings = 25, bot id = 8767157717)
+[2026-07-02 01:34:07,695] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Превышен таймаут семафора]
+[2026-07-02 01:34:07,695] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 5.070694 seconds and try again... (tryings = 26, bot id = 8767157717)
+[2026-07-02 01:35:14,817] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Превышен таймаут семафора]
+[2026-07-02 01:35:14,817] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 5.057745 seconds and try again... (tryings = 27, bot id = 8767157717)
+[2026-07-02 01:36:21,908] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Превышен таймаут семафора]
+[2026-07-02 01:36:21,908] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 5.091201 seconds and try again... (tryings = 28, bot id = 8767157717)
+[2026-07-02 01:37:29,062] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Превышен таймаут семафора]
+[2026-07-02 01:37:29,062] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 5.110225 seconds and try again... (tryings = 29, bot id = 8767157717)
+[2026-07-02 01:38:36,220] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Превышен таймаут семафора]
+[2026-07-02 01:38:36,220] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 5.114749 seconds and try again... (tryings = 30, bot id = 8767157717)
+[2026-07-02 04:01:53,648] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Подключение к сети было разорвано локальной системой]
+[2026-07-02 04:01:53,648] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 5.048670 seconds and try again... (tryings = 31, bot id = 8767157717)
+[2026-07-02 04:01:58,708] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorDNSError: Cannot connect to host api.telegram.org:443 ssl:default [getaddrinfo failed]
+[2026-07-02 04:01:58,709] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 5.101302 seconds and try again... (tryings = 32, bot id = 8767157717)
+[2026-07-02 11:55:44,001] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorDNSError: Cannot connect to host api.telegram.org:443 ssl:default [getaddrinfo failed]
+[2026-07-02 11:55:44,001] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 4.952251 seconds and try again... (tryings = 33, bot id = 8767157717)
+[2026-07-02 11:55:48,971] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorDNSError: Cannot connect to host api.telegram.org:443 ssl:default [getaddrinfo failed]
+[2026-07-02 11:55:48,972] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 5.025797 seconds and try again... (tryings = 34, bot id = 8767157717)
+[2026-07-02 11:55:54,016] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorDNSError: Cannot connect to host api.telegram.org:443 ssl:default [getaddrinfo failed]
+[2026-07-02 11:55:54,017] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 5.135044 seconds and try again... (tryings = 35, bot id = 8767157717)
+[2026-07-02 11:55:59,173] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorDNSError: Cannot connect to host api.telegram.org:443 ssl:default [getaddrinfo failed]
+[2026-07-02 11:55:59,173] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 4.950592 seconds and try again... (tryings = 36, bot id = 8767157717)
+[2026-07-02 11:56:04,144] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorDNSError: Cannot connect to host api.telegram.org:443 ssl:default [getaddrinfo failed]
+[2026-07-02 11:56:04,144] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 5.185887 seconds and try again... (tryings = 37, bot id = 8767157717)
+[2026-07-02 11:56:09,342] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorDNSError: Cannot connect to host api.telegram.org:443 ssl:default [getaddrinfo failed]
+[2026-07-02 11:56:09,342] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 5.057078 seconds and try again... (tryings = 38, bot id = 8767157717)
+[2026-07-02 11:57:16,488] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Превышен таймаут семафора]
+[2026-07-02 11:57:16,488] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 5.036845 seconds and try again... (tryings = 39, bot id = 8767157717)
+[2026-07-02 11:58:23,594] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Превышен таймаут семафора]
+[2026-07-02 11:58:23,594] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 5.065711 seconds and try again... (tryings = 40, bot id = 8767157717)
+[2026-07-02 11:59:30,696] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Превышен таймаут семафора]
+[2026-07-02 11:59:30,696] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 5.110629 seconds and try again... (tryings = 41, bot id = 8767157717)
+[2026-07-02 12:00:37,857] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Превышен таймаут семафора]
+[2026-07-02 12:00:37,858] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 5.146035 seconds and try again... (tryings = 42, bot id = 8767157717)
+[2026-07-02 12:01:45,066] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Превышен таймаут семафора]
+[2026-07-02 12:01:45,067] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 5.018072 seconds and try again... (tryings = 43, bot id = 8767157717)
+[2026-07-02 12:02:52,135] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Превышен таймаут семафора]
+[2026-07-02 12:02:52,135] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 5.057672 seconds and try again... (tryings = 44, bot id = 8767157717)
+[2026-07-02 12:03:59,267] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Превышен таймаут семафора]
+[2026-07-02 12:03:59,267] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 5.086904 seconds and try again... (tryings = 45, bot id = 8767157717)
+[2026-07-02 12:05:06,415] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Превышен таймаут семафора]
+[2026-07-02 12:05:06,415] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 4.944277 seconds and try again... (tryings = 46, bot id = 8767157717)
+[2026-07-02 12:06:13,439] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Превышен таймаут семафора]
+[2026-07-02 12:06:13,439] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 4.884551 seconds and try again... (tryings = 47, bot id = 8767157717)
+[2026-07-02 12:07:20,380] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Превышен таймаут семафора]
+[2026-07-02 12:07:20,382] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 4.939091 seconds and try again... (tryings = 48, bot id = 8767157717)
+[2026-07-02 12:08:27,376] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Превышен таймаут семафора]
+[2026-07-02 12:08:27,376] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 5.019917 seconds and try again... (tryings = 49, bot id = 8767157717)
+[2026-07-02 12:09:34,429] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Превышен таймаут семафора]
+[2026-07-02 12:09:34,429] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 4.999725 seconds and try again... (tryings = 50, bot id = 8767157717)
+[2026-07-02 12:10:41,504] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Превышен таймаут семафора]
+[2026-07-02 12:10:41,504] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 5.009332 seconds and try again... (tryings = 51, bot id = 8767157717)
+[2026-07-02 12:11:00,863] #INFO     dispatcher.py:239 - aiogram.dispatcher - Connection established (tryings = 52, bot id = 8767157717)
+[2026-07-02 12:13:11,408] #INFO     dispatcher.py:624 - aiogram.dispatcher - Polling stopped
+[2026-07-02 12:13:11,414] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+[2026-07-02 12:13:11,414] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8767157717)
+[2026-07-02 12:13:11,675] #INFO     dispatcher.py:413 - aiogram.dispatcher - Polling stopped for bot @PyRushBot id=8767157717 - 'PyRush'
+[2026-07-02 12:13:58,721] #INFO     dispatcher.py:596 - aiogram.dispatcher - Start polling
+[2026-07-02 12:13:59,007] #INFO     dispatcher.py:378 - aiogram.dispatcher - Run polling for bot @PyRushBot id=8767157717 - 'PyRush'
+[2026-07-02 12:13:59,087] #INFO     talk.py:34 - root - Отладка: метод command_choose_famous_person |
+[2026-07-02 12:13:59,452] #INFO     dispatcher.py:178 - aiogram.event - Update id=199579891 is handled. Duration 367 ms by bot id=8767157717
+[2026-07-02 12:14:05,182] #INFO     talk.py:43 - root - Отладка: метод callback_choosing_famous_person | Socrates
+[2026-07-02 12:14:07,145] #INFO     dispatcher.py:178 - aiogram.event - Update id=199579892 is handled. Duration 1965 ms by bot id=8767157717
+[2026-07-02 12:14:19,168] #INFO     dispatcher.py:178 - aiogram.event - Update id=199579893 is not handled. Duration 2 ms by bot id=8767157717
+[2026-07-02 12:14:19,168] #ERROR    dispatcher.py:325 - aiogram.event - Cause exception while process update id=199579893 by bot id=8767157717
+AttributeError: 'ChatDeepseekService' object has no attribute 'ask'
+Traceback (most recent call last):
+  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 320, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 164, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 27, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 58, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\fsm\middleware.py", line 43, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 126, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 71, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 283, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 165, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 157, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 193, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 165, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 157, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 185, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 126, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 71, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\handlers\talk.py", line 65, in answer_famous_person
+    answer = await chat_deepseek_service.ask(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ChatDeepseekService' object has no attribute 'ask'
+[2026-07-02 12:33:31,101] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientOSError: [WinError 1236] Подключение к сети было разорвано локальной системой
+[2026-07-02 12:33:31,102] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8767157717)
+[2026-07-02 12:34:34,159] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Превышен таймаут семафора]
+[2026-07-02 12:34:34,159] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 1.323006 seconds and try again... (tryings = 1, bot id = 8767157717)
+[2026-07-02 12:34:46,557] #INFO     dispatcher.py:239 - aiogram.dispatcher - Connection established (tryings = 2, bot id = 8767157717)
+[2026-07-02 12:43:58,181] #INFO     dispatcher.py:178 - aiogram.event - Update id=199579894 is not handled. Duration 4 ms by bot id=8767157717
+[2026-07-02 12:43:58,181] #ERROR    dispatcher.py:325 - aiogram.event - Cause exception while process update id=199579894 by bot id=8767157717
+AttributeError: 'ChatDeepseekService' object has no attribute 'ask'
+Traceback (most recent call last):
+  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 320, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 164, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 27, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 58, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\fsm\middleware.py", line 43, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 126, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 71, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 283, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 165, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 157, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 193, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 165, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 157, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 185, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 126, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 71, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\handlers\talk.py", line 65, in answer_famous_person
+    answer = await chat_deepseek_service.ask(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ChatDeepseekService' object has no attribute 'ask'
+[2026-07-02 12:46:12,072] #INFO     dispatcher.py:624 - aiogram.dispatcher - Polling stopped
+[2026-07-02 12:46:12,073] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+[2026-07-02 12:46:12,073] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8767157717)
+[2026-07-02 12:46:12,326] #INFO     dispatcher.py:413 - aiogram.dispatcher - Polling stopped for bot @PyRushBot id=8767157717 - 'PyRush'
+[2026-07-02 12:46:23,250] #INFO     dispatcher.py:596 - aiogram.dispatcher - Start polling
+[2026-07-02 12:46:24,479] #INFO     dispatcher.py:378 - aiogram.dispatcher - Run polling for bot @PyRushBot id=8767157717 - 'PyRush'
+[2026-07-02 12:47:12,631] #INFO     talk.py:35 - root - Отладка: метод command_choose_famous_person |
+[2026-07-02 12:47:14,060] #INFO     dispatcher.py:178 - aiogram.event - Update id=199579895 is handled. Duration 1431 ms by bot id=8767157717
+[2026-07-02 12:47:15,606] #INFO     talk.py:44 - root - Отладка: метод callback_choosing_famous_person | Freud
+[2026-07-02 12:47:17,569] #INFO     dispatcher.py:178 - aiogram.event - Update id=199579896 is handled. Duration 1965 ms by bot id=8767157717
+[2026-07-02 12:47:30,982] #INFO     _client.py:1740 - httpx - HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+[2026-07-02 12:47:43,250] #INFO     dispatcher.py:178 - aiogram.event - Update id=199579897 is handled. Duration 14448 ms by bot id=8767157717
+[2026-07-02 12:59:45,884] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientOSError: [WinError 1236] Подключение к сети было разорвано локальной системой
+[2026-07-02 12:59:45,884] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8767157717)
+[2026-07-02 13:00:49,094] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Превышен таймаут семафора]
+[2026-07-02 13:00:49,094] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 1.400487 seconds and try again... (tryings = 1, bot id = 8767157717)
+[2026-07-02 13:01:52,538] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Превышен таймаут семафора]
+[2026-07-02 13:01:52,539] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 1.925480 seconds and try again... (tryings = 2, bot id = 8767157717)
+[2026-07-02 13:02:56,546] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Превышен таймаут семафора]
+[2026-07-02 13:02:56,547] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 2.470180 seconds and try again... (tryings = 3, bot id = 8767157717)
+[2026-07-02 13:04:01,084] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Превышен таймаут семафора]
+[2026-07-02 13:04:01,084] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 3.290133 seconds and try again... (tryings = 4, bot id = 8767157717)
+[2026-07-02 13:05:06,466] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Превышен таймаут семафора]
+[2026-07-02 13:05:06,466] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 4.190629 seconds and try again... (tryings = 5, bot id = 8767157717)
+[2026-07-02 13:06:12,709] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Превышен таймаут семафора]
+[2026-07-02 13:06:12,709] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 5.117296 seconds and try again... (tryings = 6, bot id = 8767157717)
+[2026-07-02 13:07:20,016] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Превышен таймаут семафора]
+[2026-07-02 13:07:20,016] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 5.068578 seconds and try again... (tryings = 7, bot id = 8767157717)
+[2026-07-02 13:08:27,153] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Превышен таймаут семафора]
+[2026-07-02 13:08:27,153] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 4.830442 seconds and try again... (tryings = 8, bot id = 8767157717)
+[2026-07-02 13:09:34,033] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Превышен таймаут семафора]
+[2026-07-02 13:09:34,033] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 4.982234 seconds and try again... (tryings = 9, bot id = 8767157717)
+[2026-07-02 13:10:41,060] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Превышен таймаут семафора]
+[2026-07-02 13:10:41,060] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 4.984910 seconds and try again... (tryings = 10, bot id = 8767157717)
+[2026-07-02 13:11:48,211] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Превышен таймаут семафора]
+[2026-07-02 13:11:48,212] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 4.867579 seconds and try again... (tryings = 11, bot id = 8767157717)
+[2026-07-02 13:12:55,125] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Превышен таймаут семафора]
+[2026-07-02 13:12:55,126] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 5.079246 seconds and try again... (tryings = 12, bot id = 8767157717)
+[2026-07-02 13:14:02,249] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Превышен таймаут семафора]
+[2026-07-02 13:14:02,249] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 5.114772 seconds and try again... (tryings = 13, bot id = 8767157717)
+[2026-07-02 13:15:09,437] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Превышен таймаут семафора]
+[2026-07-02 13:15:09,437] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 5.063281 seconds and try again... (tryings = 14, bot id = 8767157717)
+[2026-07-02 13:16:16,543] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Превышен таймаут семафора]
+[2026-07-02 13:16:16,543] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 4.970406 seconds and try again... (tryings = 15, bot id = 8767157717)
+[2026-07-02 13:17:23,545] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Превышен таймаут семафора]
+[2026-07-02 13:17:23,546] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 4.978788 seconds and try again... (tryings = 16, bot id = 8767157717)
+[2026-07-02 13:18:30,569] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Превышен таймаут семафора]
+[2026-07-02 13:18:30,569] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 4.943011 seconds and try again... (tryings = 17, bot id = 8767157717)
+[2026-07-02 13:19:37,542] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Превышен таймаут семафора]
+[2026-07-02 13:19:37,542] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 4.953377 seconds and try again... (tryings = 18, bot id = 8767157717)
+[2026-07-02 13:20:44,547] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Превышен таймаут семафора]
+[2026-07-02 13:20:44,547] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 4.957284 seconds and try again... (tryings = 19, bot id = 8767157717)
+[2026-07-02 13:21:51,557] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Превышен таймаут семафора]
+[2026-07-02 13:21:51,557] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 5.087581 seconds and try again... (tryings = 20, bot id = 8767157717)
+[2026-07-02 13:22:58,671] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Превышен таймаут семафора]
+[2026-07-02 13:22:58,671] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 4.999804 seconds and try again... (tryings = 21, bot id = 8767157717)
+[2026-07-02 13:24:05,735] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Превышен таймаут семафора]
+[2026-07-02 13:24:05,735] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 4.895162 seconds and try again... (tryings = 22, bot id = 8767157717)
+[2026-07-02 13:25:12,675] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Превышен таймаут семафора]
+[2026-07-02 13:25:12,676] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 4.957712 seconds and try again... (tryings = 23, bot id = 8767157717)
+[2026-07-02 13:26:19,679] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Превышен таймаут семафора]
+[2026-07-02 13:26:19,679] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 4.892490 seconds and try again... (tryings = 24, bot id = 8767157717)
+[2026-07-02 13:27:26,610] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Превышен таймаут семафора]
+[2026-07-02 13:27:26,610] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 4.847344 seconds and try again... (tryings = 25, bot id = 8767157717)
+[2026-07-02 13:28:33,504] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Превышен таймаут семафора]
+[2026-07-02 13:28:33,505] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 5.123561 seconds and try again... (tryings = 26, bot id = 8767157717)
+[2026-07-02 13:29:40,672] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Превышен таймаут семафора]
+[2026-07-02 13:29:40,673] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 4.713105 seconds and try again... (tryings = 27, bot id = 8767157717)
+[2026-07-02 13:30:47,426] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Превышен таймаут семафора]
+[2026-07-02 13:30:47,427] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 5.002236 seconds and try again... (tryings = 28, bot id = 8767157717)
+[2026-07-02 13:31:03,520] #INFO     dispatcher.py:239 - aiogram.dispatcher - Connection established (tryings = 29, bot id = 8767157717)
+[2026-07-02 13:56:49,820] #INFO     dispatcher.py:624 - aiogram.dispatcher - Polling stopped
+[2026-07-02 13:56:49,824] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+[2026-07-02 13:56:49,824] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8767157717)
+[2026-07-02 13:56:50,089] #INFO     dispatcher.py:413 - aiogram.dispatcher - Polling stopped for bot @PyRushBot id=8767157717 - 'PyRush'
+[2026-07-02 13:57:02,483] #INFO     dispatcher.py:596 - aiogram.dispatcher - Start polling
+[2026-07-02 13:57:04,007] #INFO     dispatcher.py:378 - aiogram.dispatcher - Run polling for bot @PyRushBot id=8767157717 - 'PyRush'
+[2026-07-02 13:57:41,529] #INFO     dispatcher.py:178 - aiogram.event - Update id=199579898 is not handled. Duration 6 ms by bot id=8767157717
+[2026-07-02 13:57:41,530] #ERROR    dispatcher.py:325 - aiogram.event - Cause exception while process update id=199579898 by bot id=8767157717
+TypeError: ChatDeepseekService.ask_deepseek() got an unexpected keyword argument 'user_text'
+Traceback (most recent call last):
+  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 320, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 164, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 27, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 58, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\fsm\middleware.py", line 43, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 126, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 71, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 283, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 165, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 157, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 193, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 165, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 157, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 185, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 126, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 71, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\handlers\echo.py", line 35, in echo
+    answer = await chat_deepseek_service.ask_deepseek(
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        user_text=message.text,
+        ^^^^^^^^^^^^^^^^^^^^^^^
+        role_text=role_text,
+        ^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+TypeError: ChatDeepseekService.ask_deepseek() got an unexpected keyword argument 'user_text'
+[2026-07-02 14:02:04,131] #INFO     dispatcher.py:624 - aiogram.dispatcher - Polling stopped
+[2026-07-02 14:02:04,131] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+[2026-07-02 14:02:04,131] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8767157717)
+[2026-07-02 14:02:04,395] #INFO     dispatcher.py:413 - aiogram.dispatcher - Polling stopped for bot @PyRushBot id=8767157717 - 'PyRush'
+[2026-07-02 14:02:12,448] #INFO     dispatcher.py:596 - aiogram.dispatcher - Start polling
+[2026-07-02 14:02:13,849] #INFO     dispatcher.py:378 - aiogram.dispatcher - Run polling for bot @PyRushBot id=8767157717 - 'PyRush'
+[2026-07-02 14:02:22,353] #INFO     _client.py:1740 - httpx - HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+[2026-07-02 14:02:25,624] #INFO     dispatcher.py:178 - aiogram.event - Update id=199579899 is handled. Duration 5424 ms by bot id=8767157717
+[2026-07-02 14:03:15,175] #INFO     _client.py:1740 - httpx - HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+[2026-07-02 14:03:18,006] #INFO     dispatcher.py:178 - aiogram.event - Update id=199579900 is handled. Duration 3802 ms by bot id=8767157717
+[2026-07-02 14:03:28,506] #INFO     dispatcher.py:178 - aiogram.event - Update id=199579901 is handled. Duration 440 ms by bot id=8767157717
+[2026-07-02 14:03:36,952] #INFO     dispatcher.py:178 - aiogram.event - Update id=199579902 is handled. Duration 806 ms by bot id=8767157717
+[2026-07-02 14:03:43,130] #INFO     dispatcher.py:178 - aiogram.event - Update id=199579903 is handled. Duration 4572 ms by bot id=8767157717
+[2026-07-02 14:04:00,366] #INFO     dispatcher.py:178 - aiogram.event - Update id=199579904 is handled. Duration 418 ms by bot id=8767157717
+[2026-07-02 14:04:14,080] #INFO     dispatcher.py:178 - aiogram.event - Update id=199579905 is handled. Duration 555 ms by bot id=8767157717
+[2026-07-02 14:04:53,975] #INFO     random_fact.py:35 - handlers.random_fact - Отладка: метод command_random |
+[2026-07-02 14:04:59,681] #INFO     _client.py:1740 - httpx - HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+[2026-07-02 14:05:13,859] #INFO     dispatcher.py:178 - aiogram.event - Update id=199579906 is handled. Duration 19887 ms by bot id=8767157717
+[2026-07-02 14:08:06,704] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientOSError: [WinError 1236] Подключение к сети было разорвано локальной системой
+[2026-07-02 14:08:06,704] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8767157717)
+[2026-07-02 14:09:09,747] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Превышен таймаут семафора]
+[2026-07-02 14:09:09,747] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 1.146782 seconds and try again... (tryings = 1, bot id = 8767157717)
+[2026-07-02 14:10:12,926] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Превышен таймаут семафора]
+[2026-07-02 14:10:12,927] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 1.394238 seconds and try again... (tryings = 2, bot id = 8767157717)
+[2026-07-02 14:11:16,369] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Превышен таймаут семафора]
+[2026-07-02 14:11:16,369] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 1.778679 seconds and try again... (tryings = 3, bot id = 8767157717)
+[2026-07-02 14:12:20,172] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Превышен таймаут семафора]
+[2026-07-02 14:12:20,173] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 2.334850 seconds and try again... (tryings = 4, bot id = 8767157717)
+[2026-07-02 14:13:24,577] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Превышен таймаут семафора]
+[2026-07-02 14:13:24,577] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 3.113493 seconds and try again... (tryings = 5, bot id = 8767157717)
+[2026-07-02 14:14:29,748] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Превышен таймаут семафора]
+[2026-07-02 14:14:29,748] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 4.223854 seconds and try again... (tryings = 6, bot id = 8767157717)
+[2026-07-02 14:15:36,020] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Превышен таймаут семафора]
+[2026-07-02 14:15:36,020] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 5.098826 seconds and try again... (tryings = 7, bot id = 8767157717)
+[2026-07-02 14:16:43,160] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Превышен таймаут семафора]
+[2026-07-02 14:16:43,160] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 4.990180 seconds and try again... (tryings = 8, bot id = 8767157717)
+[2026-07-02 14:17:50,209] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Превышен таймаут семафора]
+[2026-07-02 14:17:50,209] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 5.048719 seconds and try again... (tryings = 9, bot id = 8767157717)
+[2026-07-02 14:18:57,313] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Превышен таймаут семафора]
+[2026-07-02 14:18:57,313] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 5.052141 seconds and try again... (tryings = 10, bot id = 8767157717)
+[2026-07-02 14:20:04,410] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Превышен таймаут семафора]
+[2026-07-02 14:20:04,410] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 5.130065 seconds and try again... (tryings = 11, bot id = 8767157717)
+[2026-07-02 14:21:11,573] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Превышен таймаут семафора]
+[2026-07-02 14:21:11,573] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 4.920994 seconds and try again... (tryings = 12, bot id = 8767157717)
+[2026-07-02 14:22:18,531] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Превышен таймаут семафора]
+[2026-07-02 14:22:18,531] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 5.039809 seconds and try again... (tryings = 13, bot id = 8767157717)
+[2026-07-02 14:23:25,632] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Превышен таймаут семафора]
+[2026-07-02 14:23:25,633] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 4.958453 seconds and try again... (tryings = 14, bot id = 8767157717)
+[2026-07-02 14:24:32,630] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Превышен таймаут семафора]
+[2026-07-02 14:24:32,630] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 5.048351 seconds and try again... (tryings = 15, bot id = 8767157717)
+[2026-07-02 14:25:39,734] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Превышен таймаут семафора]
+[2026-07-02 14:25:39,735] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 4.945783 seconds and try again... (tryings = 16, bot id = 8767157717)
+[2026-07-02 14:26:46,726] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Превышен таймаут семафора]
+[2026-07-02 14:26:46,726] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 5.108083 seconds and try again... (tryings = 17, bot id = 8767157717)
+[2026-07-02 14:27:53,875] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Превышен таймаут семафора]
+[2026-07-02 14:27:53,875] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 4.949250 seconds and try again... (tryings = 18, bot id = 8767157717)
+[2026-07-02 14:29:00,880] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Превышен таймаут семафора]
+[2026-07-02 14:29:00,880] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 5.137856 seconds and try again... (tryings = 19, bot id = 8767157717)
+[2026-07-02 14:30:08,067] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Превышен таймаут семафора]
+[2026-07-02 14:30:08,067] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 5.147653 seconds and try again... (tryings = 20, bot id = 8767157717)
+[2026-07-02 14:31:15,267] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Превышен таймаут семафора]
+[2026-07-02 14:31:15,267] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 5.070344 seconds and try again... (tryings = 21, bot id = 8767157717)
+[2026-07-02 14:32:22,388] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Превышен таймаут семафора]
+[2026-07-02 14:32:22,388] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 4.850456 seconds and try again... (tryings = 22, bot id = 8767157717)
+[2026-07-02 14:33:29,310] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Превышен таймаут семафора]
+[2026-07-02 14:33:29,310] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 4.953247 seconds and try again... (tryings = 23, bot id = 8767157717)
+[2026-07-02 14:34:36,310] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Превышен таймаут семафора]
+[2026-07-02 14:34:36,310] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 5.050883 seconds and try again... (tryings = 24, bot id = 8767157717)
+[2026-07-02 14:35:43,408] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Превышен таймаут семафора]
+[2026-07-02 14:35:43,408] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 5.161805 seconds and try again... (tryings = 25, bot id = 8767157717)
+[2026-07-02 14:36:50,605] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Превышен таймаут семафора]
+[2026-07-02 14:36:50,606] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 5.046581 seconds and try again... (tryings = 26, bot id = 8767157717)
+[2026-07-02 14:37:57,691] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Превышен таймаут семафора]
+[2026-07-02 14:37:57,691] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 5.163981 seconds and try again... (tryings = 27, bot id = 8767157717)
+[2026-07-02 14:39:04,891] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Превышен таймаут семафора]
+[2026-07-02 14:39:04,891] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 4.948395 seconds and try again... (tryings = 28, bot id = 8767157717)
+[2026-07-02 14:40:11,896] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Превышен таймаут семафора]
+[2026-07-02 14:40:11,896] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 4.999434 seconds and try again... (tryings = 29, bot id = 8767157717)
+[2026-07-02 14:41:18,935] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Превышен таймаут семафора]
+[2026-07-02 14:41:18,935] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 4.938514 seconds and try again... (tryings = 30, bot id = 8767157717)
+[2026-07-02 14:42:25,935] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Превышен таймаут семафора]
+[2026-07-02 14:42:25,935] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 5.081693 seconds and try again... (tryings = 31, bot id = 8767157717)
+[2026-07-02 14:43:33,058] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientConnectorError: Cannot connect to host api.telegram.org:443 ssl:default [Превышен таймаут семафора]
+[2026-07-02 14:43:33,058] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 4.994508 seconds and try again... (tryings = 32, bot id = 8767157717)
+[2026-07-02 14:43:49,265] #INFO     dispatcher.py:239 - aiogram.dispatcher - Connection established (tryings = 33, bot id = 8767157717)
+[2026-07-02 14:44:23,110] #INFO     dispatcher.py:624 - aiogram.dispatcher - Polling stopped
+[2026-07-02 14:44:23,111] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+[2026-07-02 14:44:23,111] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8767157717)
+[2026-07-02 14:44:23,372] #INFO     dispatcher.py:413 - aiogram.dispatcher - Polling stopped for bot @PyRushBot id=8767157717 - 'PyRush'

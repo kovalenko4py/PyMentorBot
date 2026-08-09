@@ -24,5 +24,3 @@ class ChatGptService:
         answer = response.choices[0].message.content
 
         return answer
-
-

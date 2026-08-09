@@ -1,35 +1,19 @@
 from aiogram import Router, types, F
 from aiogram.filters.command import Command
 from aiogram.fsm.context import FSMContext
-from aiogram.fsm.state import State, StatesGroup
+
+from states.career_state import CareerChoice, available_grades, available_jobs
 from keyboards.prof_keyboards import make_row_keyboard
 
 
+# TODO доработать эту функцию
 router = Router()
-
-available_jobs = [
-    'Программист',
-    'Менеджер',
-    'Дизайнер',
-    'Маркетолог',
-]
-
-available_grades = [
-    'Junior',
-    'Middle',
-    'Senior',
-]
-
-
-class CareerChoice(StatesGroup):
-    job = State()
-    grade = State()
 
 
 @router.message(Command('prof'))
 async def command_prof(message: types.Message, state: FSMContext):
-    # await message.reply('Выберите профессию')
-    # await state.clear()
+    # отладка
+    print(f'Отладка: метод command_prof | {message.text} | {type(message.text)}')
     await message.answer('Выберите профессию', reply_markup=make_row_keyboard(available_jobs))
     await state.set_state(CareerChoice.job)
 
@@ -37,21 +21,27 @@ async def command_prof(message: types.Message, state: FSMContext):
 @router.message(CareerChoice.job, F.text.in_(available_jobs))
 # @router.message(CareerChoice.job)
 async def prof_chosen(message: types.Message, state: FSMContext):
-    await state.update_data(proffesion=message.text)
+    # отладка
+    print(f'Отладка: метод prof_chosen | {message.text} | {type(message.text)}')
+    await state.update_data(profession=message.text)
     await message.answer('Выберите уровень', reply_markup=make_row_keyboard(available_grades))
     await state.set_state(CareerChoice.grade)
 
 
 @router.message(CareerChoice.job)
 async def prof_incorrect(message: types.Message):
+    # отладка
+    print(f'Отладка: метод prof_incorrect | {message.text} | {type(message.text)}')
     await message.answer('Еще раз выберите профессию', reply_markup=make_row_keyboard(available_jobs))
 
 
 # @router.message(CareerChoice.grade)
 @router.message(CareerChoice.grade, F.text.in_(available_grades))
 async def grade_chosen(message: types.Message, state: FSMContext):
+    # отладка
+    print(f'Отладка: метод grade_chosen | {message.text} | {type(message.text)}')
     user_data = await state.get_data()
-    await message.answer(f"Профессия: {user_data.get('proffesion')}, уровень: {message.text}",
+    await message.answer(f"Профессия: {user_data.get('profession')}, уровень: {message.text}",
                          reply_markup=types.ReplyKeyboardRemove()
                          )
     await state.clear()
@@ -59,4 +49,6 @@ async def grade_chosen(message: types.Message, state: FSMContext):
 
 @router.message(CareerChoice.grade)
 async def grade_incorrect(message: types.Message):
+    # отладка
+    print(f'Отладка: метод grade_incorrect | {message.text} | {type(message.text)}')
     await message.answer('Еще раз выберите уровень', reply_markup=make_row_keyboard(available_grades))

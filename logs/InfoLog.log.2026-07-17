@@ -1,0 +1,289 @@
+[2026-07-17 09:36:24,022] #INFO     dispatcher.py:596 - aiogram.dispatcher - Start polling
+[2026-07-17 09:36:24,281] #INFO     dispatcher.py:378 - aiogram.dispatcher - Run polling for bot @PyRushBot id=8767157717 - 'PyRush'
+[2026-07-17 09:39:34,470] #INFO     dispatcher.py:624 - aiogram.dispatcher - Polling stopped
+[2026-07-17 09:39:34,472] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+[2026-07-17 09:39:34,472] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8767157717)
+[2026-07-17 09:39:34,731] #INFO     dispatcher.py:413 - aiogram.dispatcher - Polling stopped for bot @PyRushBot id=8767157717 - 'PyRush'
+[2026-07-17 09:39:55,759] #INFO     dispatcher.py:596 - aiogram.dispatcher - Start polling
+[2026-07-17 09:39:55,999] #INFO     dispatcher.py:378 - aiogram.dispatcher - Run polling for bot @PyRushBot id=8767157717 - 'PyRush'
+[2026-07-17 09:40:47,226] #INFO     random_fact.py:37 - handlers.random_fact - Отладка: метод command_random |
+[2026-07-17 09:40:51,643] #INFO     _client.py:1740 - httpx - HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+[2026-07-17 09:41:36,014] #INFO     dispatcher.py:178 - aiogram.event - Update id=199580062 is handled. Duration 48791 ms by bot id=8767157717
+[2026-07-17 09:41:41,175] #INFO     random_fact.py:37 - handlers.random_fact - Отладка: метод command_random |
+[2026-07-17 09:41:42,195] #INFO     _client.py:1740 - httpx - HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+[2026-07-17 09:42:11,493] #INFO     dispatcher.py:178 - aiogram.event - Update id=199580063 is handled. Duration 30323 ms by bot id=8767157717
+[2026-07-17 09:42:16,516] #INFO     dispatcher.py:178 - aiogram.event - Update id=199580064 is handled. Duration 150 ms by bot id=8767157717
+[2026-07-17 09:42:29,765] #INFO     dispatcher.py:178 - aiogram.event - Update id=199580065 is handled. Duration 505 ms by bot id=8767157717
+[2026-07-17 09:42:43,244] #INFO     dispatcher.py:178 - aiogram.event - Update id=199580066 is handled. Duration 105 ms by bot id=8767157717
+[2026-07-17 09:42:50,079] #INFO     dispatcher.py:178 - aiogram.event - Update id=199580067 is not handled. Duration 2 ms by bot id=8767157717
+[2026-07-17 09:59:32,485] #INFO     dispatcher.py:624 - aiogram.dispatcher - Polling stopped
+[2026-07-17 09:59:32,488] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+[2026-07-17 09:59:32,488] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8767157717)
+[2026-07-17 09:59:32,748] #INFO     dispatcher.py:413 - aiogram.dispatcher - Polling stopped for bot @PyRushBot id=8767157717 - 'PyRush'
+[2026-07-17 09:59:50,435] #INFO     dispatcher.py:596 - aiogram.dispatcher - Start polling
+[2026-07-17 09:59:50,680] #INFO     dispatcher.py:378 - aiogram.dispatcher - Run polling for bot @PyRushBot id=8767157717 - 'PyRush'
+[2026-07-17 10:01:07,866] #INFO     dispatcher.py:178 - aiogram.event - Update id=199580068 is handled. Duration 228 ms by bot id=8767157717
+[2026-07-17 10:01:18,400] #INFO     dispatcher.py:178 - aiogram.event - Update id=199580069 is handled. Duration 163 ms by bot id=8767157717
+[2026-07-17 10:01:25,288] #INFO     dispatcher.py:178 - aiogram.event - Update id=199580070 is handled. Duration 5481 ms by bot id=8767157717
+[2026-07-17 10:01:27,035] #INFO     dispatcher.py:178 - aiogram.event - Update id=199580071 is handled. Duration 87 ms by bot id=8767157717
+[2026-07-17 10:01:30,524] #INFO     dispatcher.py:178 - aiogram.event - Update id=199580072 is handled. Duration 705 ms by bot id=8767157717
+[2026-07-17 10:01:34,938] #INFO     dispatcher.py:178 - aiogram.event - Update id=199580073 is handled. Duration 98 ms by bot id=8767157717
+[2026-07-17 10:01:37,567] #INFO     dispatcher.py:178 - aiogram.event - Update id=199580074 is handled. Duration 88 ms by bot id=8767157717
+[2026-07-17 10:01:42,395] #INFO     dispatcher.py:178 - aiogram.event - Update id=199580075 is handled. Duration 706 ms by bot id=8767157717
+[2026-07-17 10:01:46,772] #INFO     dispatcher.py:178 - aiogram.event - Update id=199580076 is handled. Duration 86 ms by bot id=8767157717
+[2026-07-17 10:02:03,864] #INFO     dispatcher.py:178 - aiogram.event - Update id=199580077 is handled. Duration 15423 ms by bot id=8767157717
+[2026-07-17 10:02:10,674] #INFO     _client.py:1740 - httpx - HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+[2026-07-17 10:02:14,869] #INFO     dispatcher.py:178 - aiogram.event - Update id=199580078 is not handled. Duration 5711 ms by bot id=8767157717
+[2026-07-17 10:02:14,869] #ERROR    dispatcher.py:325 - aiogram.event - Cause exception while process update id=199580078 by bot id=8767157717
+TypeError: answer_deepseek() missing 2 required positional arguments: 'message' and 'chat_deepseek_service'
+Traceback (most recent call last):
+  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 320, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 164, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 27, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 58, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\fsm\middleware.py", line 43, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 126, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 71, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 283, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 165, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 157, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 193, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 165, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 157, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 185, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 126, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 71, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\handlers\ai_chats.py", line 87, in answer_deepseek
+    answer_deepseek()
+    ~~~~~~~~~~~~~~~^^
+TypeError: answer_deepseek() missing 2 required positional arguments: 'message' and 'chat_deepseek_service'
+[2026-07-17 10:02:25,216] #INFO     _client.py:1740 - httpx - HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+[2026-07-17 10:02:34,829] #INFO     dispatcher.py:178 - aiogram.event - Update id=199580079 is not handled. Duration 10086 ms by bot id=8767157717
+[2026-07-17 10:02:34,829] #ERROR    dispatcher.py:325 - aiogram.event - Cause exception while process update id=199580079 by bot id=8767157717
+TypeError: answer_deepseek() missing 2 required positional arguments: 'message' and 'chat_deepseek_service'
+Traceback (most recent call last):
+  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 320, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 164, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 27, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 58, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\fsm\middleware.py", line 43, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 126, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 71, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 283, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 165, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 157, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 193, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 165, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 157, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 185, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 126, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 71, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\handlers\ai_chats.py", line 87, in answer_deepseek
+    answer_deepseek()
+    ~~~~~~~~~~~~~~~^^
+TypeError: answer_deepseek() missing 2 required positional arguments: 'message' and 'chat_deepseek_service'
+[2026-07-17 10:02:40,498] #INFO     dispatcher.py:178 - aiogram.event - Update id=199580080 is handled. Duration 88 ms by bot id=8767157717
+[2026-07-17 10:02:44,405] #INFO     dispatcher.py:178 - aiogram.event - Update id=199580081 is handled. Duration 152 ms by bot id=8767157717
+[2026-07-17 10:02:53,326] #INFO     dispatcher.py:178 - aiogram.event - Update id=199580082 is handled. Duration 160 ms by bot id=8767157717
+[2026-07-17 10:03:00,977] #INFO     dispatcher.py:178 - aiogram.event - Update id=199580083 is handled. Duration 89 ms by bot id=8767157717
+[2026-07-17 10:03:04,853] #INFO     dispatcher.py:178 - aiogram.event - Update id=199580084 is handled. Duration 2187 ms by bot id=8767157717
+[2026-07-17 10:03:09,412] #INFO     dispatcher.py:178 - aiogram.event - Update id=199580085 is handled. Duration 367 ms by bot id=8767157717
+[2026-07-17 10:03:12,196] #INFO     dispatcher.py:178 - aiogram.event - Update id=199580086 is handled. Duration 570 ms by bot id=8767157717
+[2026-07-17 10:03:19,937] #INFO     _client.py:1740 - httpx - HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+[2026-07-17 10:03:22,235] #INFO     dispatcher.py:178 - aiogram.event - Update id=199580087 is handled. Duration 2806 ms by bot id=8767157717
+[2026-07-17 10:03:31,335] #INFO     dispatcher.py:178 - aiogram.event - Update id=199580088 is handled. Duration 86 ms by bot id=8767157717
+[2026-07-17 10:16:09,743] #INFO     talk.py:38 - root - Отладка: метод command_choose_famous_person |
+[2026-07-17 10:16:09,828] #INFO     dispatcher.py:178 - aiogram.event - Update id=199580089 is handled. Duration 90 ms by bot id=8767157717
+[2026-07-17 10:16:12,396] #INFO     talk.py:46 - root - Отладка: метод callback_choosing_famous_person | Hawking
+[2026-07-17 10:16:13,287] #INFO     dispatcher.py:178 - aiogram.event - Update id=199580090 is handled. Duration 897 ms by bot id=8767157717
+[2026-07-17 10:16:19,858] #INFO     _client.py:1740 - httpx - HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+[2026-07-17 10:16:32,262] #INFO     dispatcher.py:178 - aiogram.event - Update id=199580091 is handled. Duration 12937 ms by bot id=8767157717
+[2026-07-17 10:17:48,006] #INFO     _client.py:1740 - httpx - HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+[2026-07-17 10:17:59,873] #INFO     dispatcher.py:178 - aiogram.event - Update id=199580092 is handled. Duration 12357 ms by bot id=8767157717
+[2026-07-17 10:19:56,418] #INFO     dispatcher.py:178 - aiogram.event - Update id=199580093 is handled. Duration 118 ms by bot id=8767157717
+[2026-07-17 10:27:03,487] #INFO     talk.py:38 - root - Отладка: метод command_choose_famous_person |
+[2026-07-17 10:27:03,596] #INFO     dispatcher.py:178 - aiogram.event - Update id=199580094 is handled. Duration 113 ms by bot id=8767157717
+[2026-07-17 10:27:05,899] #INFO     dispatcher.py:178 - aiogram.event - Update id=199580095 is handled. Duration 95 ms by bot id=8767157717
+[2026-07-17 10:27:11,182] #INFO     talk.py:38 - root - Отладка: метод command_choose_famous_person |
+[2026-07-17 10:27:11,268] #INFO     dispatcher.py:178 - aiogram.event - Update id=199580096 is handled. Duration 90 ms by bot id=8767157717
+[2026-07-17 10:27:12,328] #INFO     talk.py:46 - root - Отладка: метод callback_choosing_famous_person | Freud
+[2026-07-17 10:27:12,750] #INFO     dispatcher.py:178 - aiogram.event - Update id=199580097 is handled. Duration 424 ms by bot id=8767157717
+[2026-07-17 10:27:18,521] #INFO     _client.py:1740 - httpx - HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+[2026-07-17 10:27:33,236] #INFO     dispatcher.py:178 - aiogram.event - Update id=199580098 is handled. Duration 15259 ms by bot id=8767157717
+[2026-07-17 10:27:46,048] #INFO     dispatcher.py:178 - aiogram.event - Update id=199580099 is handled. Duration 87 ms by bot id=8767157717
+[2026-07-17 10:27:51,819] #INFO     dispatcher.py:178 - aiogram.event - Update id=199580100 is handled. Duration 101 ms by bot id=8767157717
+[2026-07-17 10:28:18,490] #INFO     quiz.py:39 - root - Отладка: метод command_choose_quiz |
+[2026-07-17 10:28:18,753] #INFO     dispatcher.py:178 - aiogram.event - Update id=199580101 is handled. Duration 266 ms by bot id=8767157717
+[2026-07-17 10:28:24,990] #INFO     quiz.py:49 - root - Отладка: метод callback_choosing_quiz | Python_core_Q
+[2026-07-17 10:28:25,077] #INFO     dispatcher.py:178 - aiogram.event - Update id=199580102 is handled. Duration 89 ms by bot id=8767157717
+[2026-07-17 10:28:33,059] #INFO     dispatcher.py:178 - aiogram.event - Update id=199580103 is not handled. Duration 2 ms by bot id=8767157717
+[2026-07-17 10:30:17,040] #INFO     dispatcher.py:624 - aiogram.dispatcher - Polling stopped
+[2026-07-17 10:30:17,043] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+[2026-07-17 10:30:17,044] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8767157717)
+[2026-07-17 10:30:17,310] #INFO     dispatcher.py:413 - aiogram.dispatcher - Polling stopped for bot @PyRushBot id=8767157717 - 'PyRush'
+[2026-07-17 10:37:06,807] #INFO     dispatcher.py:596 - aiogram.dispatcher - Start polling
+[2026-07-17 10:37:07,047] #INFO     dispatcher.py:378 - aiogram.dispatcher - Run polling for bot @PyRushBot id=8767157717 - 'PyRush'
+[2026-07-17 10:38:26,796] #INFO     quiz.py:39 - root - Отладка: метод command_choose_quiz |
+[2026-07-17 10:38:27,810] #INFO     dispatcher.py:178 - aiogram.event - Update id=199580104 is handled. Duration 1021 ms by bot id=8767157717
+[2026-07-17 10:38:29,917] #INFO     quiz.py:59 - root - Отладка: метод callback_choosing_quiz | HTTP_Q
+[2026-07-17 10:38:30,008] #INFO     dispatcher.py:178 - aiogram.event - Update id=199580105 is handled. Duration 96 ms by bot id=8767157717
+[2026-07-17 10:38:32,656] #INFO     quiz.py:49 - root - Отладка: метод callback_choosing_quiz | New_QuiZ
+[2026-07-17 10:38:33,295] #INFO     dispatcher.py:178 - aiogram.event - Update id=199580106 is handled. Duration 643 ms by bot id=8767157717
+[2026-07-17 10:38:36,236] #INFO     quiz.py:59 - root - Отладка: метод callback_choosing_quiz | aiogram_Q
+[2026-07-17 10:38:36,323] #INFO     dispatcher.py:178 - aiogram.event - Update id=199580107 is handled. Duration 94 ms by bot id=8767157717
+[2026-07-17 10:38:38,137] #INFO     quiz.py:49 - root - Отладка: метод callback_choosing_quiz | New_QuiZ
+[2026-07-17 10:38:38,682] #INFO     dispatcher.py:178 - aiogram.event - Update id=199580108 is handled. Duration 546 ms by bot id=8767157717
+[2026-07-17 10:38:41,238] #INFO     dispatcher.py:178 - aiogram.event - Update id=199580109 is handled. Duration 175 ms by bot id=8767157717
+[2026-07-17 10:38:45,762] #INFO     quiz.py:39 - root - Отладка: метод command_choose_quiz |
+[2026-07-17 10:38:46,279] #INFO     dispatcher.py:178 - aiogram.event - Update id=199580110 is handled. Duration 521 ms by bot id=8767157717
+[2026-07-17 10:38:48,546] #INFO     quiz.py:59 - root - Отладка: метод callback_choosing_quiz | Python_core_Q
+[2026-07-17 10:38:48,637] #INFO     dispatcher.py:178 - aiogram.event - Update id=199580111 is handled. Duration 94 ms by bot id=8767157717
+[2026-07-17 10:38:55,168] #INFO     _client.py:1740 - httpx - HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+[2026-07-17 10:39:13,737] #INFO     dispatcher.py:178 - aiogram.event - Update id=199580112 is handled. Duration 19838 ms by bot id=8767157717
+[2026-07-17 10:39:23,861] #INFO     dispatcher.py:178 - aiogram.event - Update id=199580113 is handled. Duration 120 ms by bot id=8767157717
+[2026-07-17 10:39:38,849] #INFO     _client.py:1740 - httpx - HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+[2026-07-17 10:39:51,620] #INFO     dispatcher.py:178 - aiogram.event - Update id=199580114 is handled. Duration 13289 ms by bot id=8767157717
+[2026-07-17 10:40:18,195] #INFO     dispatcher.py:178 - aiogram.event - Update id=199580115 is handled. Duration 111 ms by bot id=8767157717
+[2026-07-17 10:41:32,081] #INFO     _client.py:1740 - httpx - HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+[2026-07-17 10:41:43,097] #INFO     dispatcher.py:178 - aiogram.event - Update id=199580116 is handled. Duration 11557 ms by bot id=8767157717
+[2026-07-17 10:42:10,520] #INFO     dispatcher.py:178 - aiogram.event - Update id=199580117 is handled. Duration 91 ms by bot id=8767157717
+[2026-07-17 10:42:38,197] #INFO     quiz.py:49 - root - Отладка: метод callback_choosing_quiz | New_QuiZ
+[2026-07-17 10:42:38,617] #INFO     dispatcher.py:178 - aiogram.event - Update id=199580118 is handled. Duration 421 ms by bot id=8767157717
+[2026-07-17 10:42:41,839] #INFO     quiz.py:59 - root - Отладка: метод callback_choosing_quiz | HTTP_Q
+[2026-07-17 10:42:41,920] #INFO     dispatcher.py:178 - aiogram.event - Update id=199580119 is handled. Duration 83 ms by bot id=8767157717
+[2026-07-17 10:42:44,769] #INFO     dispatcher.py:178 - aiogram.event - Update id=199580120 is not handled. Duration 3 ms by bot id=8767157717
+[2026-07-17 10:47:07,580] #INFO     dispatcher.py:624 - aiogram.dispatcher - Polling stopped
+[2026-07-17 10:47:07,584] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+[2026-07-17 10:47:07,584] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8767157717)
+[2026-07-17 10:47:07,840] #INFO     dispatcher.py:413 - aiogram.dispatcher - Polling stopped for bot @PyRushBot id=8767157717 - 'PyRush'
+[2026-07-17 10:47:21,249] #INFO     dispatcher.py:596 - aiogram.dispatcher - Start polling
+[2026-07-17 10:47:21,491] #INFO     dispatcher.py:378 - aiogram.dispatcher - Run polling for bot @PyRushBot id=8767157717 - 'PyRush'
+[2026-07-17 10:47:27,620] #INFO     quiz.py:40 - root - Отладка: метод command_choose_quiz |
+[2026-07-17 10:47:28,247] #INFO     dispatcher.py:178 - aiogram.event - Update id=199580121 is handled. Duration 635 ms by bot id=8767157717
+[2026-07-17 10:47:29,944] #INFO     quiz.py:60 - root - Отладка: метод callback_choosing_quiz | HTTP_Q
+[2026-07-17 10:47:30,045] #INFO     dispatcher.py:178 - aiogram.event - Update id=199580122 is handled. Duration 105 ms by bot id=8767157717
+[2026-07-17 10:47:33,219] #INFO     _client.py:1740 - httpx - HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+[2026-07-17 10:47:46,316] #INFO     dispatcher.py:178 - aiogram.event - Update id=199580123 is handled. Duration 14800 ms by bot id=8767157717
+[2026-07-17 10:47:48,357] #INFO     dispatcher.py:178 - aiogram.event - Update id=199580124 is handled. Duration 90 ms by bot id=8767157717
+[2026-07-17 10:47:59,842] #INFO     dispatcher.py:178 - aiogram.event - Update id=199580125 is handled. Duration 90 ms by bot id=8767157717
+[2026-07-17 10:48:09,533] #INFO     quiz.py:40 - root - Отладка: метод command_choose_quiz |
+[2026-07-17 10:48:09,975] #INFO     dispatcher.py:178 - aiogram.event - Update id=199580126 is handled. Duration 448 ms by bot id=8767157717
+[2026-07-17 10:48:12,228] #INFO     quiz.py:60 - root - Отладка: метод callback_choosing_quiz | aiogram_Q
+[2026-07-17 10:48:12,339] #INFO     dispatcher.py:178 - aiogram.event - Update id=199580127 is handled. Duration 113 ms by bot id=8767157717
+[2026-07-17 10:48:14,377] #INFO     quiz.py:50 - root - Отладка: метод callback_choosing_quiz | New_QuiZ
+[2026-07-17 10:48:14,631] #INFO     dispatcher.py:178 - aiogram.event - Update id=199580128 is handled. Duration 259 ms by bot id=8767157717
+[2026-07-17 10:48:16,387] #INFO     dispatcher.py:178 - aiogram.event - Update id=199580129 is handled. Duration 90 ms by bot id=8767157717
+[2026-07-17 10:49:38,982] #INFO     dispatcher.py:178 - aiogram.event - Update id=199580130 is handled. Duration 435 ms by bot id=8767157717
+[2026-07-17 10:49:49,306] #INFO     dispatcher.py:178 - aiogram.event - Update id=199580131 is handled. Duration 167 ms by bot id=8767157717
+[2026-07-17 10:49:51,487] #INFO     dispatcher.py:178 - aiogram.event - Update id=199580132 is handled. Duration 685 ms by bot id=8767157717
+[2026-07-17 10:49:52,979] #INFO     dispatcher.py:178 - aiogram.event - Update id=199580133 is handled. Duration 87 ms by bot id=8767157717
+[2026-07-17 10:49:58,686] #INFO     quiz.py:40 - root - Отладка: метод command_choose_quiz |
+[2026-07-17 10:49:58,865] #INFO     dispatcher.py:178 - aiogram.event - Update id=199580134 is handled. Duration 185 ms by bot id=8767157717
+[2026-07-17 10:50:00,310] #INFO     dispatcher.py:178 - aiogram.event - Update id=199580135 is handled. Duration 104 ms by bot id=8767157717
+[2026-07-17 10:50:02,133] #INFO     dispatcher.py:178 - aiogram.event - Update id=199580136 is handled. Duration 582 ms by bot id=8767157717
+[2026-07-17 10:50:06,941] #INFO     dispatcher.py:178 - aiogram.event - Update id=199580137 is handled. Duration 88 ms by bot id=8767157717
+[2026-07-17 10:52:21,527] #INFO     dispatcher.py:178 - aiogram.event - Update id=199580138 is handled. Duration 93 ms by bot id=8767157717
+[2026-07-17 10:52:30,856] #INFO     dispatcher.py:178 - aiogram.event - Update id=199580139 is handled. Duration 1530 ms by bot id=8767157717
+[2026-07-17 10:52:45,624] #INFO     _client.py:1740 - httpx - HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+[2026-07-17 10:52:50,540] #INFO     dispatcher.py:178 - aiogram.event - Update id=199580140 is handled. Duration 5423 ms by bot id=8767157717
+[2026-07-17 10:52:58,131] #INFO     dispatcher.py:178 - aiogram.event - Update id=199580141 is handled. Duration 84 ms by bot id=8767157717
+[2026-07-17 10:53:02,947] #INFO     dispatcher.py:178 - aiogram.event - Update id=199580142 is handled. Duration 89 ms by bot id=8767157717
+[2026-07-17 10:53:05,087] #INFO     dispatcher.py:178 - aiogram.event - Update id=199580143 is handled. Duration 105 ms by bot id=8767157717
+[2026-07-17 10:53:09,476] #INFO     dispatcher.py:178 - aiogram.event - Update id=199580144 is handled. Duration 91 ms by bot id=8767157717
+[2026-07-17 10:53:22,485] #INFO     dispatcher.py:178 - aiogram.event - Update id=199580145 is handled. Duration 386 ms by bot id=8767157717
+[2026-07-17 10:53:30,359] #INFO     dispatcher.py:178 - aiogram.event - Update id=199580146 is handled. Duration 84 ms by bot id=8767157717
+[2026-07-17 10:53:34,845] #INFO     dispatcher.py:178 - aiogram.event - Update id=199580147 is handled. Duration 980 ms by bot id=8767157717
+[2026-07-17 10:53:44,532] #INFO     dispatcher.py:178 - aiogram.event - Update id=199580148 is handled. Duration 87 ms by bot id=8767157717
+[2026-07-17 10:53:48,231] #INFO     dispatcher.py:178 - aiogram.event - Update id=199580149 is handled. Duration 450 ms by bot id=8767157717
+[2026-07-17 10:53:50,255] #INFO     dispatcher.py:178 - aiogram.event - Update id=199580150 is handled. Duration 87 ms by bot id=8767157717
+[2026-07-17 21:51:19,664] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - Request timeout error
+[2026-07-17 21:51:19,668] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8767157717)
+[2026-07-17 21:51:35,510] #INFO     dispatcher.py:239 - aiogram.dispatcher - Connection established (tryings = 1, bot id = 8767157717)
+[2026-07-17 22:13:25,672] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - Request timeout error
+[2026-07-17 22:13:25,672] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8767157717)
+[2026-07-17 22:13:36,908] #INFO     dispatcher.py:239 - aiogram.dispatcher - Connection established (tryings = 1, bot id = 8767157717)
+[2026-07-17 23:15:06,021] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - Request timeout error
+[2026-07-17 23:15:06,022] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8767157717)
+[2026-07-17 23:15:17,725] #INFO     dispatcher.py:239 - aiogram.dispatcher - Connection established (tryings = 1, bot id = 8767157717)

@@ -1,0 +1,8 @@
+[2026-08-08 23:49:30,055] #DEBUG    _config.py:82 - httpx - load_ssl_context verify=True cert=None trust_env=True http2=False
+[2026-08-08 23:49:30,060] #DEBUG    _config.py:148 - httpx - load_verify_locations cafile='C:\\Users\\79688\\Documents\\dev\\Py\\PyBotStep4\\.venv\\Lib\\site-packages\\certifi\\cacert.pem'
+[2026-08-08 23:49:31,047] #DEBUG    _config.py:82 - httpx - load_ssl_context verify=True cert=None trust_env=True http2=False
+[2026-08-08 23:49:31,048] #DEBUG    _config.py:148 - httpx - load_verify_locations cafile='C:\\Users\\79688\\Documents\\dev\\Py\\PyBotStep4\\.venv\\Lib\\site-packages\\certifi\\cacert.pem'
+[2026-08-08 23:54:45,970] #DEBUG    _config.py:82 - httpx - load_ssl_context verify=True cert=None trust_env=True http2=False
+[2026-08-08 23:54:45,973] #DEBUG    _config.py:148 - httpx - load_verify_locations cafile='C:\\Users\\79688\\Documents\\dev\\Py\\PyBotStep4\\.venv\\Lib\\site-packages\\certifi\\cacert.pem'
+[2026-08-08 23:54:46,660] #DEBUG    _config.py:82 - httpx - load_ssl_context verify=True cert=None trust_env=True http2=False
+[2026-08-08 23:54:46,663] #DEBUG    _config.py:148 - httpx - load_verify_locations cafile='C:\\Users\\79688\\Documents\\dev\\Py\\PyBotStep4\\.venv\\Lib\\site-packages\\certifi\\cacert.pem'

@@ -1,0 +1,106 @@
+[2026-07-10 17:35:50,869] #INFO     dispatcher.py:596 - aiogram.dispatcher - Start polling
+[2026-07-10 17:35:51,149] #INFO     dispatcher.py:378 - aiogram.dispatcher - Run polling for bot @PyRushBot id=8767157717 - 'PyRush'
+[2026-07-10 17:41:01,530] #INFO     dispatcher.py:624 - aiogram.dispatcher - Polling stopped
+[2026-07-10 17:41:01,532] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+[2026-07-10 17:41:01,532] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8767157717)
+[2026-07-10 17:41:01,794] #INFO     dispatcher.py:413 - aiogram.dispatcher - Polling stopped for bot @PyRushBot id=8767157717 - 'PyRush'
+[2026-07-10 17:41:09,755] #INFO     dispatcher.py:596 - aiogram.dispatcher - Start polling
+[2026-07-10 17:41:10,027] #INFO     dispatcher.py:378 - aiogram.dispatcher - Run polling for bot @PyRushBot id=8767157717 - 'PyRush'
+[2026-07-10 17:41:25,881] #INFO     dispatcher.py:178 - aiogram.event - Update id=199579997 is handled. Duration 1115 ms by bot id=8767157717
+[2026-07-10 17:43:34,802] #INFO     dispatcher.py:624 - aiogram.dispatcher - Polling stopped
+[2026-07-10 17:43:34,803] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+[2026-07-10 17:43:34,803] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8767157717)
+[2026-07-10 17:43:35,069] #INFO     dispatcher.py:413 - aiogram.dispatcher - Polling stopped for bot @PyRushBot id=8767157717 - 'PyRush'
+[2026-07-10 17:43:44,361] #INFO     dispatcher.py:596 - aiogram.dispatcher - Start polling
+[2026-07-10 17:43:44,605] #INFO     dispatcher.py:378 - aiogram.dispatcher - Run polling for bot @PyRushBot id=8767157717 - 'PyRush'
+[2026-07-10 17:43:45,416] #INFO     dispatcher.py:178 - aiogram.event - Update id=199579998 is not handled. Duration 2 ms by bot id=8767157717
+[2026-07-10 17:43:45,417] #ERROR    dispatcher.py:325 - aiogram.event - Cause exception while process update id=199579998 by bot id=8767157717
+NameError: name 'api_key' is not defined
+Traceback (most recent call last):
+  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 320, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 164, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 27, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 58, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\fsm\middleware.py", line 43, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 126, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 71, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 283, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 165, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 157, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 193, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 165, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 157, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    )
+    ^
+  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 185, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 126, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 71, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\handlers\admin_commands.py", line 46, in command_send_balance_ds
+    data = deepseek_check_balance()
+  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\utils\deepseek_util.py", line 7, in deepseek_check_balance
+    if not api_key:
+           ^^^^^^^
+NameError: name 'api_key' is not defined
+[2026-07-10 17:44:42,532] #INFO     dispatcher.py:624 - aiogram.dispatcher - Polling stopped
+[2026-07-10 17:44:42,533] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+[2026-07-10 17:44:42,533] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8767157717)
+[2026-07-10 17:44:42,794] #INFO     dispatcher.py:413 - aiogram.dispatcher - Polling stopped for bot @PyRushBot id=8767157717 - 'PyRush'
+[2026-07-10 17:44:50,505] #INFO     dispatcher.py:596 - aiogram.dispatcher - Start polling
+[2026-07-10 17:44:50,761] #INFO     dispatcher.py:378 - aiogram.dispatcher - Run polling for bot @PyRushBot id=8767157717 - 'PyRush'
+[2026-07-10 17:44:52,911] #INFO     dispatcher.py:178 - aiogram.event - Update id=199579999 is handled. Duration 1069 ms by bot id=8767157717
+[2026-07-10 17:45:53,432] #INFO     dispatcher.py:624 - aiogram.dispatcher - Polling stopped
+[2026-07-10 17:45:53,433] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+[2026-07-10 17:45:53,433] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8767157717)
+[2026-07-10 17:45:53,694] #INFO     dispatcher.py:413 - aiogram.dispatcher - Polling stopped for bot @PyRushBot id=8767157717 - 'PyRush'
+[2026-07-10 17:46:01,411] #INFO     dispatcher.py:596 - aiogram.dispatcher - Start polling
+[2026-07-10 17:46:01,986] #INFO     dispatcher.py:378 - aiogram.dispatcher - Run polling for bot @PyRushBot id=8767157717 - 'PyRush'
+[2026-07-10 17:46:08,530] #INFO     dispatcher.py:178 - aiogram.event - Update id=199580000 is handled. Duration 3887 ms by bot id=8767157717
+[2026-07-10 18:07:30,258] #INFO     dispatcher.py:624 - aiogram.dispatcher - Polling stopped
+[2026-07-10 18:07:30,260] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ServerDisconnectedError: Server disconnected
+[2026-07-10 18:07:30,260] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8767157717)
+[2026-07-10 18:07:30,521] #INFO     dispatcher.py:413 - aiogram.dispatcher - Polling stopped for bot @PyRushBot id=8767157717 - 'PyRush'
+[2026-07-10 18:07:40,671] #INFO     dispatcher.py:596 - aiogram.dispatcher - Start polling
+[2026-07-10 18:07:40,970] #INFO     dispatcher.py:378 - aiogram.dispatcher - Run polling for bot @PyRushBot id=8767157717 - 'PyRush'
+[2026-07-10 18:07:49,973] #INFO     dispatcher.py:178 - aiogram.event - Update id=199580001 is handled. Duration 1104 ms by bot id=8767157717
+[2026-07-10 22:59:43,474] #ERROR    dispatcher.py:225 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - Request timeout error
+[2026-07-10 22:59:43,474] #WARNING  dispatcher.py:227 - aiogram.dispatcher - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8767157717)
+[2026-07-10 22:59:58,096] #INFO     dispatcher.py:239 - aiogram.dispatcher - Connection established (tryings = 1, bot id = 8767157717)
