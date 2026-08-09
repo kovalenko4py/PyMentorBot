@@ -6,6 +6,7 @@ from aiogram.filters.command import Command
 from keyboards.inline_keyboard import inline_keyboard_start
 
 from utils.deepseek_util import deepseek_check_balance
+import utils.users
 
 
 router = Router()

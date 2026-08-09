@@ -2,7 +2,7 @@ from aiogram import types
 
 
 button_start = types.KeyboardButton(text='/start')
-button_info = types.KeyboardButton(text='/nfo')
+button_info = types.KeyboardButton(text='/info')
 button_fox = types.KeyboardButton(text='/fox')
 button_duck = types.KeyboardButton(text='/duck')
 button_ai = types.KeyboardButton(text='/ai_image')

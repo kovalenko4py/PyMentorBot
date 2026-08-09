@@ -6,14 +6,13 @@ from aiogram.types import FSInputFile, CallbackQuery
 from aiogram.filters import StateFilter
 from aiogram.filters.command import Command
 from aiogram.fsm.context import FSMContext
-from states.base_state import FMSUser
 
 from keyboards.keyboards import kb_random_command
 from keyboards.inline_keyboard import inline_keyboard_famous_person, inline_keyboard_undo
 from services.image import person_image
 # from services.chat_gpt import ChatGptService
 from services.chat_deepseek import ChatDeepseekService
-
+from states.base_state import FMSUser
 
 router = Router()
 
@@ -49,7 +48,7 @@ async def callback_choosing_famous_person(callback: CallbackQuery, state: FSMCon
     image_famous_person = FSInputFile(person_image(famous_person))
     await callback.message.delete()
     await callback.message.answer_photo(image_famous_person)
-    await callback.message.answer(f'Привет {callback.message.chat.first_name}, о чем ты хочешь поговорить?', reply_markup=inline_keyboard_undo)
+    await callback.message.answer(f'Привет, {callback.message.chat.first_name}, о чем ты хочешь поговорить?', reply_markup=inline_keyboard_undo)
     await state.update_data(famous_person=famous_person)
 
 

@@ -6,12 +6,6 @@
 # PyMentor Bot 
 
 Форк [лекции Project_tg_4](https://github.com/Stanislavzzz/JR_PyVenom/tree/main/m1/lesson.32_Project_tg_4) от [Stanislavzzz](https://github.com/Stanislavzzz)
-<div align="center">
-<img src="https://img.shields.io/badge/.ENV-ECD53F.svg?style=default&logo=dotenv&logoColor=black" alt=".ENV">
-<img src="https://img.shields.io/badge/Python-3776AB.svg?style=default&logo=Python&logoColor=white" alt="Python">
-<img src="https://img.shields.io/badge/OpenAI-412991.svg?style=default&logo=OpenAI&logoColor=white" alt="OpenAI">
-<img src="https://img.shields.io/badge/redis-FF0000.svg?style=default&logo=redis&logoColor=white" alt="redis">
-</div>
 
 Создан для проверки знаний и навыков Python core автора проекта в рамках обучения на курсе Python JavaRush, поэтому написан без использования ИИ.    
 Но может быть полезен для проверки и закрепления знаний по основам python для начинающих изучать программирование.   
@@ -23,7 +17,7 @@
 #### Для пользователей с правами админ и выше:
 | Функция                                                   |     Команды     | 
 |:----------------------------------------------------------|:---------------:|
-| Отправляет файлы с логами                                 |      текст      | 
+| Отправляет файлы с логами                                 |     см TODO     | 
 | Показывает баланс и информацию по использованию DeepSeek  | send_balance_ds |
 
 
@@ -43,6 +37,13 @@
 
 ### Стек
 
+<div align="center">
+<img src="https://img.shields.io/badge/.ENV-ECD53F.svg?style=default&logo=dotenv&logoColor=black" alt=".ENV">
+<img src="https://img.shields.io/badge/Python-3776AB.svg?style=default&logo=Python&logoColor=white" alt="Python">
+<img src="https://img.shields.io/badge/OpenAI-412991.svg?style=default&logo=OpenAI&logoColor=white" alt="OpenAI">
+<img src="https://img.shields.io/badge/redis-FF0000.svg?style=default&logo=redis&logoColor=white" alt="redis">
+</div>
+
 - Python 3.13+
 - requests
 - beautifulsoup4
@@ -60,14 +61,8 @@ cd project-name
 pip install -r requirements.txt
 ```
 
-
 ### Настройка
-Создайте файл `.env` и укажите:
-
-```env
-BOT_TOKEN=your_telegram_bot_token
-TARGET_URL=https://example.com
-```
+Создайте файл `.env` и заполните по примеру [env.example](env.example)
 
 
 ### Запуск
@@ -82,22 +77,18 @@ py .\main.py
     ├── README.md
     ├── configs
     │   ├── __init__.py
-    │   ├── __pycache__
     │   └── config.py
     ├── db
     │   ├── __init__.py
-    │   ├── __pycache__
     │   └── memory_fms.py
     ├── env.example
     ├── handlers
     │   ├── __init__.py
-    │   ├── __pycache__
     │   ├── admin_commands.py
     │   ├── ai_chats.py
     │   ├── base_commands.py
-    │   ├── career_choice.py
     │   ├── echo.py
-    │   ├── http_cat.py
+    │   ├── http_cat_info.py
     │   ├── quiz.py
     │   ├── random_fact.py
     │   └── talk.py
@@ -108,35 +99,25 @@ py .\main.py
     │   └── quiz
     ├── keyboards
     │   ├── __init__.py
-    │   ├── __pycache__
     │   ├── inline_keyboard.py
     │   ├── keyboards.py
     │   └── prof_keyboards.py
     ├── logs
     │   ├── DebugLog.log
-    │   ├── DebugLog.log.2026-06-18
     │   ├── InfoLog.log
-    │   ├── InfoLog.log.2026-06-20
-    │   ├── InfoLog.log.2026-..-..
     ├── main.py
-    ├── my_bad_code_style
     ├── requirements.txt
     ├── services
-    │   ├── __init__.py
-    │   ├── __pycache__
     │   ├── chat_deepseek.py
     │   ├── chat_gpt.py
-    │   ├── http_cat.py
+    │   ├── http_cat_info.py
     │   └── image.py
-    ├── setup.cfg
     ├── states
     │   ├── __init__.py
-    │   ├── __pycache__
     │   ├── base_state.py
     │   └── career_state.py
     └── utils
         ├── __init__.py
-        ├── __pycache__
         ├── deepseek_util.py
         ├── filters.py
         ├── redis.py
@@ -145,7 +126,10 @@ py .\main.py
 
 
 ### TODO
-- Добавить логирование
+- Рефакторинг логирования. Сейчас - раскидано по всем проекту и дублируется. Надо - централизованные конфиги
 - Добавить обработку ошибок сети
-- Добавить кэширование
-- Перевести настройки в `.env`
+- Дописать функционал карьерного консультанта (dev ветка)
+- Дописать условие выбора AI, если один из них недоступен
+- Дописать фичу "Расскажи уточке свою проблему"
+- Подключить MiniIO для работы с файлами картинок
+- Подключить PostgresSQL для хранения информации о результатах Quiz, ответах для карьерного менеджера, списка админов и тд

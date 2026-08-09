@@ -5,7 +5,7 @@ import asyncio
 from aiogram import Bot, Dispatcher
 
 from configs import config
-from handlers import base_commands, ai_chats, career_choice, echo, http_cat, random_fact, talk, admin_commands, quiz
+from handlers import base_commands, ai_chats, echo, http_cat, random_fact, talk, admin_commands, quiz
 from services.chat_gpt import ChatGptService
 from services.chat_deepseek import ChatDeepseekService
 from db.memory_fms import memory_fms
@@ -66,7 +66,6 @@ async def main():
 
     dp.include_router(admin_commands.router)
     dp.include_router(base_commands.router)
-    dp.include_router(career_choice.router)
     dp.include_router(ai_chats.router)
     dp.include_router(talk.router)
     dp.include_router(quiz.router)

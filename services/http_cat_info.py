@@ -23,8 +23,9 @@ def http_cat(http_code: str):
         # print(f"data : {code_info_raw}", end="\n-----\n")
         return {"image": image, "content": content}
     elif response.status_code == 404:
-        image = "https://http.cat/status/404.jpeg"
-        return image
+        image = "https://http.cat/images/404.jpg"
+        content = "There is no such HTTP code."
+        return {"image": image, "content": content}
     else:
         # отладка
         print(url)

@@ -1,7 +1,0 @@
-[2026-07-01 23:57:42,195] #INFO     dispatcher.py:596 - aiogram.dispatcher - Start polling
-[2026-07-01 23:57:42,487] #INFO     dispatcher.py:378 - aiogram.dispatcher - Run polling for bot @PyRushBot id=8767157717 - 'PyRush'
-[2026-07-01 23:58:39,210] #INFO     talk.py:34 - root - Отладка: метод command_choose_famous_person |
-[2026-07-01 23:58:39,575] #INFO     dispatcher.py:178 - aiogram.event - Update id=199579857 is handled. Duration 368 ms by bot id=8767157717
-[2026-07-01 23:58:45,222] #INFO     talk.py:42 - root - Отладка: метод callback_choosing_famous_person | Hawking
-[2026-07-01 23:59:00,136] #INFO     dispatcher.py:178 - aiogram.event - Update id=199579858 is handled. Duration 14916 ms by bot id=8767157717
-[2026-07-01 23:59:12,279] #INFO     dispatcher.py:178 - aiogram.event - Update id=199579859 is handled. Duration 92 ms by bot id=8767157717

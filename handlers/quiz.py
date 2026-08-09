@@ -45,7 +45,7 @@ async def command_choose_quiz(message: types.Message, state: FSMContext):
 
 
 @router.callback_query(StateFilter(FMSQuiz.play), F.data.in_(['New_QuiZ']))
-async def callback_choose_new_quiz(callback: CallbackQuery, state: FSMContext):
+async def callback_choose_new_quiz(callback: CallbackQuery):
     # отладка
     logging.info(f'Отладка: метод callback_choosing_quiz | {callback.data}')
 

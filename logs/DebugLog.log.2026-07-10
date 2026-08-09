@@ -1,8 +1,0 @@
-[2026-07-10 17:41:24,768] #DEBUG    connectionpool.py:1062 - urllib3.connectionpool - Starting new HTTPS connection (1): api.deepseek.com:443
-[2026-07-10 17:41:25,635] #DEBUG    connectionpool.py:544 - urllib3.connectionpool - https://api.deepseek.com:443 "GET /user/balance HTTP/1.1" 200 133
-[2026-07-10 17:44:51,845] #DEBUG    connectionpool.py:1062 - urllib3.connectionpool - Starting new HTTPS connection (1): api.deepseek.com:443
-[2026-07-10 17:44:52,667] #DEBUG    connectionpool.py:544 - urllib3.connectionpool - https://api.deepseek.com:443 "GET /user/balance HTTP/1.1" 200 133
-[2026-07-10 17:46:04,645] #DEBUG    connectionpool.py:1062 - urllib3.connectionpool - Starting new HTTPS connection (1): api.deepseek.com:443
-[2026-07-10 17:46:05,582] #DEBUG    connectionpool.py:544 - urllib3.connectionpool - https://api.deepseek.com:443 "GET /user/balance HTTP/1.1" 200 133
-[2026-07-10 18:07:48,872] #DEBUG    connectionpool.py:1062 - urllib3.connectionpool - Starting new HTTPS connection (1): api.deepseek.com:443
-[2026-07-10 18:07:49,752] #DEBUG    connectionpool.py:544 - urllib3.connectionpool - https://api.deepseek.com:443 "GET /user/balance HTTP/1.1" 200 133
