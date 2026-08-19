@@ -40,13 +40,13 @@ async def command_start(message: types.Message):
     """Метод. На вход принимает команды: start, START; слова: 'старт', 'начало', 'начало работы', 'Закончить!!','End !!' и др. Возвращает информацию о боте и его функциях, а также базовые команды в виде кнопок."""
     # отладка
     print(f'Отладка: метод command_start |')
-    await message.answer(f'Привет, {message.chat.first_name}!\n Узнать обо мне подробней - info\n Или переходи к общению с ИИ', reply_markup=inline_keyboard_start)
+    await message.answer(f'Привет, {message.chat.first_name}!\n Узнать обо мне подробней - /info\n Или переходи к общению с ИИ', reply_markup=inline_keyboard_start)
     await message.delete()
 
 
 @router.callback_query((F.data == 'undo'), ~StateFilter(default_state))
 async def callback_undo_clear_state(callback: CallbackQuery, state: FSMContext):
-    await callback.message.answer(f'Привет, {callback.message.chat.first_name}!\n Узнать обо мне подробней - info\n Или переходи к общению с ИИ', reply_markup=inline_keyboard_start)
+    await callback.message.answer(f'Привет, {callback.message.chat.first_name}!\n Узнать обо мне подробней - /info\n Или переходи к общению с ИИ', reply_markup=inline_keyboard_start)
     await state.clear()
 
 
@@ -65,23 +65,59 @@ async def command_start(message: types.Message):
 
 
 # /info
+info_text = (
+        "🤖 <b>Привет! Я PyMentor Bot</b>\n\n"
+        "Я помощник для изучения Python, проверки знаний и общения с ИИ.\n\n"
+        "<b>Что я умею:</b>\n\n"
+        "📚 <b>Рассказывать факты о Python</b>\n"
+        "Команда: /random или сообщение «Еще факт!»\n\n"
+        "💬 <b>Отвечать на вопросы с помощью ИИ</b>\n"
+        "Выбери DeepSeek: /ask_deepseek\n"
+        "Или GPT: /ask_gpt\n\n"
+        "🧠 <b>Общаться от лица известных мыслителей</b>\n"
+        "Можно поговорить с Сократом, Стивеном Хокингом или Зигмундом Фрейдом.\n"
+        "Команда: /talk\n\n"
+        "📝 <b>Проверять знания в квизах</b>\n"
+        "Доступные темы: Python Core, HTTP и Aiogram.\n"
+        "Команда: /quiz\n\n"
+        "🐱 <b>Показывать HTTP-котов</b>\n"
+        "Расскажу о HTTP-статусе и покажу подходящего кота.\n"
+        "Команда: /http_cat\n\n"
+        "🦆 <b>Отправлять изображения</b>\n"
+        "Уточки: /duck\n"
+        "Лисы: /fox\n"
+        "AI-изображения: /ai_image\n\n"
+        "🆔 <b>Показывать ваш Telegram ID</b>\n"
+        "Команда: /id\n\n"
+        "🔄 <b>Начать сначала</b>\n"
+        "Используйте /start или напишите «старт».\n\n"
+        "📖 <b>Подробнее об устройстве бота:</b>\n"
+        '<a href="https://github.com/kovalenko4py/PyMentorBot/blob/main/README.md">'
+        "README проекта на GitHub</a>"
+    )
+
 @router.message(Command(commands=['инфо', 'info', 'help']))
 @router.message((F.text.lower().in_(['info', 'информация', 'инфо',
                 'расскажи о себе', 'кто ты'])), StateFilter(default_state))
 async def command_info(message: types.Message):
     """Метод. На вход принимает команды info, инфо, help. Возвращает информацию о боте и его функциях, а также базовые команды в виде кнопок."""
     # отладка
-    print(f'Отладка: метод command_info |')
-    await message.answer('Это бот с подключением ChatGPT и DeepSeek', reply_markup=kb_base_command)
 
+    await message.answer(info_text,
+                                  parse_mode="HTML",
+                                  disable_web_page_preview=True,
+                                  reply_markup=kb_base_command)
 
 @router.callback_query(F.data == 'info')
 async def callback_info(callback: CallbackQuery):
     """Метод. Вызывается по кнопке "Инфо о боте". Возвращает информацию о боте и его функциях, а также базовые команды в виде кнопок."""
     # отладка
     print(f'Отладка: метод callback_info |')
-    await callback.message.answer('Это бот с подключением ChatGPT и DeepSeek', reply_markup=kb_base_command)
 
+    await callback.message.answer(info_text,
+                                  parse_mode="HTML",
+                                  disable_web_page_preview=True,
+                                  reply_markup=kb_base_command)
 
 # /fox
 @router.message(Command('fox'))

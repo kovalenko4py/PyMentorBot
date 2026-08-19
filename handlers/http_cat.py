@@ -51,7 +51,7 @@ async def answer_http_cat(message: types.Message):
 
         await message.answer(code_info["image"])
         await message.answer(code_info["content"])
-        await message.answer(f'Как тебе котик?', reply_markup=inline_keyboard_undo)
+        await message.answer(f'Как тебе котик? Продолжим смотреть котиков?\n ой то есть изучать HTTP коды?', reply_markup=inline_keyboard_undo)
 
     else:
         # отладка

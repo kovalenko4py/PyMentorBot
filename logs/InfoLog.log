@@ -1,777 +1,824 @@
-[2026-08-09 12:30:58,164] #INFO     dispatcher.py:527 - aiogram.dispatcher - Start polling
-[2026-08-09 12:31:58,247] #INFO     dispatcher.py:554 - aiogram.dispatcher - Polling stopped
-[2026-08-09 12:32:30,880] #INFO     dispatcher.py:527 - aiogram.dispatcher - Start polling
-[2026-08-09 12:32:31,085] #INFO     dispatcher.py:341 - aiogram.dispatcher - Run polling for bot @PyRushBot id=8767157717 - 'PyRush'
-[2026-08-09 12:32:31,350] #INFO     dispatcher.py:172 - aiogram.event - Update id=199580152 is handled. Duration 203 ms by bot id=8767157717
-[2026-08-09 12:32:31,417] #INFO     dispatcher.py:172 - aiogram.event - Update id=199580151 is handled. Duration 265 ms by bot id=8767157717
-[2026-08-09 12:32:38,273] #INFO     dispatcher.py:172 - aiogram.event - Update id=199580153 is handled. Duration 155 ms by bot id=8767157717
-[2026-08-09 12:32:40,031] #INFO     dispatcher.py:172 - aiogram.event - Update id=199580154 is not handled. Duration 0 ms by bot id=8767157717
-[2026-08-09 12:32:40,031] #ERROR    dispatcher.py:315 - aiogram.event - Cause exception while process update id=199580154 by bot id=8767157717
-TypeError: AsyncCompletions.create() got an unexpected keyword argument 'reasoning_effort'
+[2026-08-19 10:00:38,884] #INFO     dispatcher.py:527 - aiogram.dispatcher - Start polling
+[2026-08-19 10:00:39,192] #INFO     dispatcher.py:341 - aiogram.dispatcher - Run polling for bot @PyRushDevBot id=8890857234 - 'PyRushDev'
+[2026-08-19 10:02:43,492] #INFO     dispatcher.py:554 - aiogram.dispatcher - Polling stopped
+[2026-08-19 10:02:43,748] #INFO     dispatcher.py:359 - aiogram.dispatcher - Polling stopped for bot @PyRushDevBot id=8890857234 - 'PyRushDev'
+[2026-08-19 10:02:54,138] #INFO     dispatcher.py:527 - aiogram.dispatcher - Start polling
+[2026-08-19 10:02:54,342] #INFO     dispatcher.py:341 - aiogram.dispatcher - Run polling for bot @PyRushDevBot id=8890857234 - 'PyRushDev'
+[2026-08-19 10:03:47,664] #INFO     dispatcher.py:554 - aiogram.dispatcher - Polling stopped
+[2026-08-19 10:03:47,921] #INFO     dispatcher.py:359 - aiogram.dispatcher - Polling stopped for bot @PyRushDevBot id=8890857234 - 'PyRushDev'
+[2026-08-19 10:03:59,403] #INFO     dispatcher.py:527 - aiogram.dispatcher - Start polling
+[2026-08-19 10:03:59,553] #INFO     dispatcher.py:341 - aiogram.dispatcher - Run polling for bot @PyRushDevBot id=8890857234 - 'PyRushDev'
+[2026-08-19 10:04:25,617] #INFO     dispatcher.py:172 - aiogram.event - Update id=337401340 is not handled. Duration 4062 ms by bot id=8890857234
+[2026-08-19 10:04:25,618] #ERROR    dispatcher.py:315 - aiogram.event - Cause exception while process update id=337401340 by bot id=8890857234
+ConnectionError: Error 22 connecting to localhost:6379. Удаленный компьютер отклонил это сетевое подключение.
 Traceback (most recent call last):
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\redis\asyncio\connection.py", line 305, in connect_check_health
+    await self.retry.call_with_retry(
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\redis\asyncio\retry.py", line 50, in call_with_retry
+    return await do()
+           ^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\redis\asyncio\connection.py", line 760, in _connect
+    reader, writer = await asyncio.open_connection(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\asyncio\streams.py", line 48, in open_connection
+    transport, _ = await loop.create_connection(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\asyncio\base_events.py", line 1127, in create_connection
+    raise exceptions[0]
+  File "C:\Python312\Lib\asyncio\base_events.py", line 1104, in create_connection
+    sock = await self._connect_sock(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\asyncio\base_events.py", line 1007, in _connect_sock
+    await self.sock_connect(sock, address)
+  File "C:\Python312\Lib\asyncio\proactor_events.py", line 727, in sock_connect
+    return await self._proactor.connect(sock, address)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\asyncio\windows_events.py", line 803, in _poll
+    value = callback(transferred, key, ov)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\asyncio\windows_events.py", line 599, in finish_connect
+    ov.getresult()
+ConnectionRefusedError: [WinError 1225] Удаленный компьютер отклонил это сетевое подключение
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
     response = await self.feed_update(bot, update, **kwargs)
                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
     response = await self.update.wrap_outer_middleware(
                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
     return await handler(event, data)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 27, in __call__
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 27, in __call__
     return await handler(event, data)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\fsm\middleware.py", line 41, in __call__
-    return await handler(event, data)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
-    return await wrapped_inner(event, kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
-    return await wrapped()
-           ^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
-    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 128, in propagate_event
-    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 123, in _wrapped
-    return await self._propagate_event(
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 156, in _propagate_event
-    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 128, in propagate_event
-    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 123, in _wrapped
-    return await self._propagate_event(
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 148, in _propagate_event
-    response = await observer.trigger(event, **kwargs)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
-    return await wrapped_inner(event, kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
-    return await wrapped()
-           ^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\handlers\echo.py", line 39, in echo
-    answer = await chat_deepseek_service.ask_deepseek(
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\services\chat_deepseek.py", line 9, in ask_deepseek
-    response = await self.client.chat.completions.create(
-                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\openai\_utils\_utils.py", line 275, in wrapper
-    return func(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^
-TypeError: AsyncCompletions.create() got an unexpected keyword argument 'reasoning_effort'
-[2026-08-09 12:32:45,942] #INFO     dispatcher.py:172 - aiogram.event - Update id=199580155 is handled. Duration 78 ms by bot id=8767157717
-[2026-08-09 12:32:54,857] #INFO     dispatcher.py:172 - aiogram.event - Update id=199580156 is handled. Duration 1500 ms by bot id=8767157717
-[2026-08-09 12:32:57,203] #INFO     dispatcher.py:172 - aiogram.event - Update id=199580157 is handled. Duration 1264 ms by bot id=8767157717
-[2026-08-09 12:32:59,419] #INFO     dispatcher.py:172 - aiogram.event - Update id=199580158 is handled. Duration 983 ms by bot id=8767157717
-[2026-08-09 12:33:44,696] #INFO     dispatcher.py:172 - aiogram.event - Update id=199580159 is handled. Duration 203 ms by bot id=8767157717
-[2026-08-09 12:33:56,928] #INFO     dispatcher.py:172 - aiogram.event - Update id=199580160 is not handled. Duration 0 ms by bot id=8767157717
-[2026-08-09 12:33:56,929] #ERROR    dispatcher.py:315 - aiogram.event - Cause exception while process update id=199580160 by bot id=8767157717
-TypeError: AsyncCompletions.create() got an unexpected keyword argument 'reasoning_effort'
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\fsm\middleware.py", line 40, in __call__
+    data.update({"state": context, "raw_state": await context.get_state()})
+                                                ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\fsm\context.py", line 15, in get_state
+    return await self.storage.get_state(key=self.key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\fsm\storage\redis.py", line 163, in get_state
+    value = await self.redis.get(redis_key)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\redis\asyncio\client.py", line 672, in execute_command
+    conn = self.connection or await pool.get_connection()
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\redis\asyncio\connection.py", line 1149, in get_connection
+    await self.ensure_connection(connection)
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\redis\asyncio\connection.py", line 1182, in ensure_connection
+    await connection.connect()
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\redis\asyncio\connection.py", line 296, in connect
+    await self.connect_check_health(check_health=True)
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\redis\asyncio\connection.py", line 315, in connect_check_health
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 22 connecting to localhost:6379. Удаленный компьютер отклонил это сетевое подключение.
+[2026-08-19 10:05:56,640] #INFO     dispatcher.py:554 - aiogram.dispatcher - Polling stopped
+[2026-08-19 10:05:56,892] #INFO     dispatcher.py:359 - aiogram.dispatcher - Polling stopped for bot @PyRushDevBot id=8890857234 - 'PyRushDev'
+[2026-08-19 10:06:04,650] #INFO     dispatcher.py:527 - aiogram.dispatcher - Start polling
+[2026-08-19 10:06:04,883] #INFO     dispatcher.py:341 - aiogram.dispatcher - Run polling for bot @PyRushDevBot id=8890857234 - 'PyRushDev'
+[2026-08-19 10:06:15,632] #INFO     dispatcher.py:172 - aiogram.event - Update id=337401341 is handled. Duration 203 ms by bot id=8890857234
+[2026-08-19 10:06:22,877] #INFO     dispatcher.py:172 - aiogram.event - Update id=337401342 is handled. Duration 78 ms by bot id=8890857234
+[2026-08-19 10:06:25,201] #INFO     dispatcher.py:172 - aiogram.event - Update id=337401343 is handled. Duration 94 ms by bot id=8890857234
+[2026-08-19 10:08:46,887] #INFO     dispatcher.py:554 - aiogram.dispatcher - Polling stopped
+[2026-08-19 10:08:47,142] #INFO     dispatcher.py:359 - aiogram.dispatcher - Polling stopped for bot @PyRushDevBot id=8890857234 - 'PyRushDev'
+[2026-08-19 10:08:53,316] #INFO     dispatcher.py:527 - aiogram.dispatcher - Start polling
+[2026-08-19 10:08:53,491] #INFO     dispatcher.py:341 - aiogram.dispatcher - Run polling for bot @PyRushDevBot id=8890857234 - 'PyRushDev'
+[2026-08-19 10:08:57,237] #INFO     dispatcher.py:172 - aiogram.event - Update id=337401344 is handled. Duration 218 ms by bot id=8890857234
+[2026-08-19 10:09:05,221] #INFO     dispatcher.py:172 - aiogram.event - Update id=337401345 is handled. Duration 452 ms by bot id=8890857234
+[2026-08-19 14:49:07,910] #INFO     dispatcher.py:527 - aiogram.dispatcher - Start polling
+[2026-08-19 14:49:08,111] #INFO     dispatcher.py:341 - aiogram.dispatcher - Run polling for bot @PyRushDevBot id=8890857234 - 'PyRushDev'
+[2026-08-19 14:49:12,281] #INFO     dispatcher.py:172 - aiogram.event - Update id=337401346 is not handled. Duration 4109 ms by bot id=8890857234
+[2026-08-19 14:49:12,281] #ERROR    dispatcher.py:315 - aiogram.event - Cause exception while process update id=337401346 by bot id=8890857234
+ConnectionError: Error 22 connecting to localhost:6379. Удаленный компьютер отклонил это сетевое подключение.
 Traceback (most recent call last):
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\redis\asyncio\connection.py", line 305, in connect_check_health
+    await self.retry.call_with_retry(
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\redis\asyncio\retry.py", line 50, in call_with_retry
+    return await do()
+           ^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\redis\asyncio\connection.py", line 760, in _connect
+    reader, writer = await asyncio.open_connection(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\asyncio\streams.py", line 48, in open_connection
+    transport, _ = await loop.create_connection(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\asyncio\base_events.py", line 1127, in create_connection
+    raise exceptions[0]
+  File "C:\Python312\Lib\asyncio\base_events.py", line 1104, in create_connection
+    sock = await self._connect_sock(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\asyncio\base_events.py", line 1007, in _connect_sock
+    await self.sock_connect(sock, address)
+  File "C:\Python312\Lib\asyncio\proactor_events.py", line 727, in sock_connect
+    return await self._proactor.connect(sock, address)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\asyncio\windows_events.py", line 803, in _poll
+    value = callback(transferred, key, ov)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\asyncio\windows_events.py", line 599, in finish_connect
+    ov.getresult()
+ConnectionRefusedError: [WinError 1225] Удаленный компьютер отклонил это сетевое подключение
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
     response = await self.feed_update(bot, update, **kwargs)
                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
     response = await self.update.wrap_outer_middleware(
                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
     return await handler(event, data)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 27, in __call__
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 27, in __call__
     return await handler(event, data)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\fsm\middleware.py", line 41, in __call__
-    return await handler(event, data)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
-    return await wrapped_inner(event, kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
-    return await wrapped()
-           ^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
-    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 128, in propagate_event
-    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 123, in _wrapped
-    return await self._propagate_event(
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 156, in _propagate_event
-    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 128, in propagate_event
-    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 123, in _wrapped
-    return await self._propagate_event(
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 148, in _propagate_event
-    response = await observer.trigger(event, **kwargs)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
-    return await wrapped_inner(event, kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
-    return await wrapped()
-           ^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\handlers\echo.py", line 39, in echo
-    answer = await chat_deepseek_service.ask_deepseek(
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\services\chat_deepseek.py", line 9, in ask_deepseek
-    response = await self.client.chat.completions.create(
-                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\openai\_utils\_utils.py", line 275, in wrapper
-    return func(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^
-TypeError: AsyncCompletions.create() got an unexpected keyword argument 'reasoning_effort'
-[2026-08-09 12:36:02,781] #INFO     dispatcher.py:554 - aiogram.dispatcher - Polling stopped
-[2026-08-09 12:36:03,037] #INFO     dispatcher.py:359 - aiogram.dispatcher - Polling stopped for bot @PyRushBot id=8767157717 - 'PyRush'
-[2026-08-09 12:36:09,766] #INFO     dispatcher.py:527 - aiogram.dispatcher - Start polling
-[2026-08-09 12:36:09,938] #INFO     dispatcher.py:341 - aiogram.dispatcher - Run polling for bot @PyRushBot id=8767157717 - 'PyRush'
-[2026-08-09 12:36:51,772] #INFO     dispatcher.py:172 - aiogram.event - Update id=199580161 is not handled. Duration 0 ms by bot id=8767157717
-[2026-08-09 12:36:51,773] #ERROR    dispatcher.py:315 - aiogram.event - Cause exception while process update id=199580161 by bot id=8767157717
-TypeError: AsyncCompletions.create() got an unexpected keyword argument 'reasoning_effort'
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\fsm\middleware.py", line 40, in __call__
+    data.update({"state": context, "raw_state": await context.get_state()})
+                                                ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\fsm\context.py", line 15, in get_state
+    return await self.storage.get_state(key=self.key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\fsm\storage\redis.py", line 163, in get_state
+    value = await self.redis.get(redis_key)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\redis\asyncio\client.py", line 672, in execute_command
+    conn = self.connection or await pool.get_connection()
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\redis\asyncio\connection.py", line 1149, in get_connection
+    await self.ensure_connection(connection)
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\redis\asyncio\connection.py", line 1182, in ensure_connection
+    await connection.connect()
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\redis\asyncio\connection.py", line 296, in connect
+    await self.connect_check_health(check_health=True)
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\redis\asyncio\connection.py", line 315, in connect_check_health
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 22 connecting to localhost:6379. Удаленный компьютер отклонил это сетевое подключение.
+[2026-08-19 14:49:16,414] #INFO     dispatcher.py:172 - aiogram.event - Update id=337401347 is not handled. Duration 8250 ms by bot id=8890857234
+[2026-08-19 14:49:16,414] #ERROR    dispatcher.py:315 - aiogram.event - Cause exception while process update id=337401347 by bot id=8890857234
+ConnectionError: Error 22 connecting to localhost:6379. Удаленный компьютер отклонил это сетевое подключение.
 Traceback (most recent call last):
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\redis\asyncio\connection.py", line 305, in connect_check_health
+    await self.retry.call_with_retry(
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\redis\asyncio\retry.py", line 50, in call_with_retry
+    return await do()
+           ^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\redis\asyncio\connection.py", line 760, in _connect
+    reader, writer = await asyncio.open_connection(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\asyncio\streams.py", line 48, in open_connection
+    transport, _ = await loop.create_connection(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\asyncio\base_events.py", line 1127, in create_connection
+    raise exceptions[0]
+  File "C:\Python312\Lib\asyncio\base_events.py", line 1104, in create_connection
+    sock = await self._connect_sock(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\asyncio\base_events.py", line 1007, in _connect_sock
+    await self.sock_connect(sock, address)
+  File "C:\Python312\Lib\asyncio\proactor_events.py", line 727, in sock_connect
+    return await self._proactor.connect(sock, address)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\asyncio\windows_events.py", line 803, in _poll
+    value = callback(transferred, key, ov)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\asyncio\windows_events.py", line 599, in finish_connect
+    ov.getresult()
+ConnectionRefusedError: [WinError 1225] Удаленный компьютер отклонил это сетевое подключение
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
     response = await self.feed_update(bot, update, **kwargs)
                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
     response = await self.update.wrap_outer_middleware(
                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
     return await handler(event, data)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 27, in __call__
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 27, in __call__
     return await handler(event, data)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\fsm\middleware.py", line 41, in __call__
-    return await handler(event, data)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
-    return await wrapped_inner(event, kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
-    return await wrapped()
-           ^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
-    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 128, in propagate_event
-    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 123, in _wrapped
-    return await self._propagate_event(
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 156, in _propagate_event
-    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 128, in propagate_event
-    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 123, in _wrapped
-    return await self._propagate_event(
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 148, in _propagate_event
-    response = await observer.trigger(event, **kwargs)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
-    return await wrapped_inner(event, kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
-    return await wrapped()
-           ^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\handlers\echo.py", line 39, in echo
-    answer = await chat_deepseek_service.ask_deepseek(
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\services\chat_deepseek.py", line 9, in ask_deepseek
-    response = await self.client.chat.completions.create(
-                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\openai\_utils\_utils.py", line 275, in wrapper
-    return func(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^
-TypeError: AsyncCompletions.create() got an unexpected keyword argument 'reasoning_effort'
-[2026-08-09 12:37:01,821] #INFO     dispatcher.py:554 - aiogram.dispatcher - Polling stopped
-[2026-08-09 12:37:02,078] #INFO     dispatcher.py:359 - aiogram.dispatcher - Polling stopped for bot @PyRushBot id=8767157717 - 'PyRush'
-[2026-08-09 12:37:07,287] #INFO     dispatcher.py:527 - aiogram.dispatcher - Start polling
-[2026-08-09 12:37:07,504] #INFO     dispatcher.py:341 - aiogram.dispatcher - Run polling for bot @PyRushBot id=8767157717 - 'PyRush'
-[2026-08-09 12:37:14,477] #INFO     dispatcher.py:172 - aiogram.event - Update id=199580162 is handled. Duration 921 ms by bot id=8767157717
-[2026-08-09 12:37:16,191] #INFO     dispatcher.py:172 - aiogram.event - Update id=199580163 is handled. Duration 94 ms by bot id=8767157717
-[2026-08-09 12:37:19,335] #INFO     dispatcher.py:172 - aiogram.event - Update id=199580164 is handled. Duration 77 ms by bot id=8767157717
-[2026-08-09 12:37:22,326] #INFO     dispatcher.py:172 - aiogram.event - Update id=199580165 is handled. Duration 2202 ms by bot id=8767157717
-[2026-08-09 12:37:30,758] #INFO     dispatcher.py:172 - aiogram.event - Update id=199580166 is handled. Duration 8640 ms by bot id=8767157717
-[2026-08-09 12:37:34,049] #INFO     dispatcher.py:172 - aiogram.event - Update id=199580167 is handled. Duration 9703 ms by bot id=8767157717
-[2026-08-09 12:37:39,963] #INFO     dispatcher.py:172 - aiogram.event - Update id=199580168 is not handled. Duration 0 ms by bot id=8767157717
-[2026-08-09 12:37:39,964] #ERROR    dispatcher.py:315 - aiogram.event - Cause exception while process update id=199580168 by bot id=8767157717
-TypeError: AsyncCompletions.create() got an unexpected keyword argument 'reasoning_effort'
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\fsm\middleware.py", line 40, in __call__
+    data.update({"state": context, "raw_state": await context.get_state()})
+                                                ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\fsm\context.py", line 15, in get_state
+    return await self.storage.get_state(key=self.key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\fsm\storage\redis.py", line 163, in get_state
+    value = await self.redis.get(redis_key)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\redis\asyncio\client.py", line 672, in execute_command
+    conn = self.connection or await pool.get_connection()
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\redis\asyncio\connection.py", line 1149, in get_connection
+    await self.ensure_connection(connection)
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\redis\asyncio\connection.py", line 1182, in ensure_connection
+    await connection.connect()
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\redis\asyncio\connection.py", line 296, in connect
+    await self.connect_check_health(check_health=True)
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\redis\asyncio\connection.py", line 315, in connect_check_health
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 22 connecting to localhost:6379. Удаленный компьютер отклонил это сетевое подключение.
+[2026-08-19 14:49:20,495] #INFO     dispatcher.py:172 - aiogram.event - Update id=337401348 is not handled. Duration 12328 ms by bot id=8890857234
+[2026-08-19 14:49:20,495] #ERROR    dispatcher.py:315 - aiogram.event - Cause exception while process update id=337401348 by bot id=8890857234
+ConnectionError: Error 22 connecting to localhost:6379. Удаленный компьютер отклонил это сетевое подключение.
 Traceback (most recent call last):
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\redis\asyncio\connection.py", line 305, in connect_check_health
+    await self.retry.call_with_retry(
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\redis\asyncio\retry.py", line 50, in call_with_retry
+    return await do()
+           ^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\redis\asyncio\connection.py", line 760, in _connect
+    reader, writer = await asyncio.open_connection(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\asyncio\streams.py", line 48, in open_connection
+    transport, _ = await loop.create_connection(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\asyncio\base_events.py", line 1127, in create_connection
+    raise exceptions[0]
+  File "C:\Python312\Lib\asyncio\base_events.py", line 1104, in create_connection
+    sock = await self._connect_sock(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\asyncio\base_events.py", line 1007, in _connect_sock
+    await self.sock_connect(sock, address)
+  File "C:\Python312\Lib\asyncio\proactor_events.py", line 727, in sock_connect
+    return await self._proactor.connect(sock, address)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\asyncio\windows_events.py", line 803, in _poll
+    value = callback(transferred, key, ov)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\asyncio\windows_events.py", line 599, in finish_connect
+    ov.getresult()
+ConnectionRefusedError: [WinError 1225] Удаленный компьютер отклонил это сетевое подключение
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
     response = await self.feed_update(bot, update, **kwargs)
                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
     response = await self.update.wrap_outer_middleware(
                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
     return await handler(event, data)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 27, in __call__
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 27, in __call__
     return await handler(event, data)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\fsm\middleware.py", line 41, in __call__
-    return await handler(event, data)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
-    return await wrapped_inner(event, kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
-    return await wrapped()
-           ^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
-    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 128, in propagate_event
-    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 123, in _wrapped
-    return await self._propagate_event(
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 156, in _propagate_event
-    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 128, in propagate_event
-    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 123, in _wrapped
-    return await self._propagate_event(
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 148, in _propagate_event
-    response = await observer.trigger(event, **kwargs)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
-    return await wrapped_inner(event, kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
-    return await wrapped()
-           ^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\handlers\echo.py", line 39, in echo
-    answer = await chat_deepseek_service.ask_deepseek(
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\services\chat_deepseek.py", line 9, in ask_deepseek
-    response = await self.client.chat.completions.create(
-                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\openai\_utils\_utils.py", line 275, in wrapper
-    return func(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^
-TypeError: AsyncCompletions.create() got an unexpected keyword argument 'reasoning_effort'
-[2026-08-09 12:39:12,409] #INFO     dispatcher.py:172 - aiogram.event - Update id=199580169 is handled. Duration 250 ms by bot id=8767157717
-[2026-08-09 12:39:18,205] #INFO     dispatcher.py:172 - aiogram.event - Update id=199580170 is not handled. Duration 0 ms by bot id=8767157717
-[2026-08-09 12:39:18,206] #ERROR    dispatcher.py:315 - aiogram.event - Cause exception while process update id=199580170 by bot id=8767157717
-TypeError: AsyncCompletions.create() got an unexpected keyword argument 'reasoning_effort'
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\fsm\middleware.py", line 40, in __call__
+    data.update({"state": context, "raw_state": await context.get_state()})
+                                                ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\fsm\context.py", line 15, in get_state
+    return await self.storage.get_state(key=self.key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\fsm\storage\redis.py", line 163, in get_state
+    value = await self.redis.get(redis_key)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\redis\asyncio\client.py", line 672, in execute_command
+    conn = self.connection or await pool.get_connection()
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\redis\asyncio\connection.py", line 1149, in get_connection
+    await self.ensure_connection(connection)
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\redis\asyncio\connection.py", line 1182, in ensure_connection
+    await connection.connect()
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\redis\asyncio\connection.py", line 296, in connect
+    await self.connect_check_health(check_health=True)
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\redis\asyncio\connection.py", line 315, in connect_check_health
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 22 connecting to localhost:6379. Удаленный компьютер отклонил это сетевое подключение.
+[2026-08-19 14:50:42,675] #INFO     dispatcher.py:554 - aiogram.dispatcher - Polling stopped
+[2026-08-19 14:50:42,931] #INFO     dispatcher.py:359 - aiogram.dispatcher - Polling stopped for bot @PyRushDevBot id=8890857234 - 'PyRushDev'
+[2026-08-19 14:50:48,444] #INFO     dispatcher.py:527 - aiogram.dispatcher - Start polling
+[2026-08-19 14:50:48,587] #INFO     dispatcher.py:341 - aiogram.dispatcher - Run polling for bot @PyRushDevBot id=8890857234 - 'PyRushDev'
+[2026-08-19 14:51:51,018] #INFO     dispatcher.py:172 - aiogram.event - Update id=337401349 is handled. Duration 187 ms by bot id=8890857234
+[2026-08-19 14:51:53,569] #INFO     dispatcher.py:172 - aiogram.event - Update id=337401350 is handled. Duration 141 ms by bot id=8890857234
+[2026-08-19 14:51:56,690] #INFO     dispatcher.py:172 - aiogram.event - Update id=337401351 is handled. Duration 921 ms by bot id=8890857234
+[2026-08-19 14:52:06,018] #INFO     _client.py:1740 - httpx - HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+[2026-08-19 14:52:13,546] #INFO     dispatcher.py:172 - aiogram.event - Update id=337401352 is handled. Duration 9092 ms by bot id=8890857234
+[2026-08-19 14:56:11,840] #INFO     _client.py:1740 - httpx - HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+[2026-08-19 14:56:19,957] #INFO     dispatcher.py:172 - aiogram.event - Update id=337401353 is handled. Duration 8608 ms by bot id=8890857234
+[2026-08-19 14:59:24,112] #INFO     _client.py:1740 - httpx - HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+[2026-08-19 14:59:43,978] #INFO     dispatcher.py:172 - aiogram.event - Update id=337401354 is handled. Duration 20343 ms by bot id=8890857234
+[2026-08-19 15:00:13,610] #INFO     _client.py:1740 - httpx - HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+[2026-08-19 15:00:22,465] #INFO     dispatcher.py:172 - aiogram.event - Update id=337401355 is handled. Duration 9342 ms by bot id=8890857234
+[2026-08-19 15:01:21,179] #INFO     dispatcher.py:172 - aiogram.event - Update id=337401356 is handled. Duration 203 ms by bot id=8890857234
+[2026-08-19 15:01:53,487] #INFO     dispatcher.py:172 - aiogram.event - Update id=337401357 is handled. Duration 1812 ms by bot id=8890857234
+[2026-08-19 15:03:07,288] #INFO     dispatcher.py:172 - aiogram.event - Update id=337401358 is handled. Duration 1217 ms by bot id=8890857234
+[2026-08-19 15:03:09,673] #INFO     dispatcher.py:172 - aiogram.event - Update id=337401359 is handled. Duration 765 ms by bot id=8890857234
+[2026-08-19 15:03:15,750] #INFO     _client.py:1740 - httpx - HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+[2026-08-19 15:03:22,573] #INFO     dispatcher.py:172 - aiogram.event - Update id=337401360 is handled. Duration 7282 ms by bot id=8890857234
+[2026-08-19 15:13:15,128] #INFO     dispatcher.py:554 - aiogram.dispatcher - Polling stopped
+[2026-08-19 15:13:15,392] #INFO     dispatcher.py:359 - aiogram.dispatcher - Polling stopped for bot @PyRushDevBot id=8890857234 - 'PyRushDev'
+[2026-08-19 15:13:34,870] #INFO     dispatcher.py:527 - aiogram.dispatcher - Start polling
+[2026-08-19 15:13:35,099] #INFO     dispatcher.py:341 - aiogram.dispatcher - Run polling for bot @PyRushDevBot id=8890857234 - 'PyRushDev'
+[2026-08-19 15:13:48,034] #INFO     dispatcher.py:172 - aiogram.event - Update id=337401361 is handled. Duration 296 ms by bot id=8890857234
+[2026-08-19 15:13:50,270] #INFO     dispatcher.py:172 - aiogram.event - Update id=337401362 is handled. Duration 890 ms by bot id=8890857234
+[2026-08-19 15:13:58,032] #INFO     _client.py:1740 - httpx - HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+[2026-08-19 15:14:03,472] #INFO     dispatcher.py:172 - aiogram.event - Update id=337401363 is handled. Duration 6671 ms by bot id=8890857234
+[2026-08-19 15:14:22,847] #INFO     talk.py:37 - root - Отладка: метод command_choose_famous_person |
+[2026-08-19 15:14:23,015] #INFO     dispatcher.py:172 - aiogram.event - Update id=337401364 is handled. Duration 172 ms by bot id=8890857234
+[2026-08-19 15:14:54,559] #INFO     dispatcher.py:172 - aiogram.event - Update id=337401365 is not handled. Duration 0 ms by bot id=8890857234
+[2026-08-19 15:14:54,559] #ERROR    dispatcher.py:315 - aiogram.event - Cause exception while process update id=337401365 by bot id=8890857234
+KeyError: 'famous_person'
 Traceback (most recent call last):
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
     response = await self.feed_update(bot, update, **kwargs)
                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
     response = await self.update.wrap_outer_middleware(
                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
     return await handler(event, data)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 27, in __call__
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 27, in __call__
     return await handler(event, data)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\fsm\middleware.py", line 41, in __call__
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\fsm\middleware.py", line 41, in __call__
     return await handler(event, data)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
     return await wrapped_inner(event, kwargs)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
     return await wrapped()
            ^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
     return await self.propagate_event(update_type=update_type, event=event, **kwargs)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 128, in propagate_event
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 128, in propagate_event
     return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 123, in _wrapped
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 123, in _wrapped
     return await self._propagate_event(
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 156, in _propagate_event
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 156, in _propagate_event
     response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 128, in propagate_event
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 128, in propagate_event
     return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 123, in _wrapped
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 123, in _wrapped
     return await self._propagate_event(
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 148, in _propagate_event
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 148, in _propagate_event
     response = await observer.trigger(event, **kwargs)
                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
     return await wrapped_inner(event, kwargs)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
     return await wrapped()
            ^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\handlers\echo.py", line 39, in echo
-    answer = await chat_deepseek_service.ask_deepseek(
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\services\chat_deepseek.py", line 9, in ask_deepseek
-    response = await self.client.chat.completions.create(
-                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\openai\_utils\_utils.py", line 275, in wrapper
-    return func(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^
-TypeError: AsyncCompletions.create() got an unexpected keyword argument 'reasoning_effort'
-[2026-08-09 12:39:37,928] #INFO     dispatcher.py:172 - aiogram.event - Update id=199580171 is handled. Duration 8562 ms by bot id=8767157717
-[2026-08-09 12:39:50,421] #INFO     dispatcher.py:172 - aiogram.event - Update id=199580172 is handled. Duration 78 ms by bot id=8767157717
-[2026-08-09 12:39:56,210] #INFO     dispatcher.py:172 - aiogram.event - Update id=199580173 is handled. Duration 77 ms by bot id=8767157717
-[2026-08-09 12:40:12,697] #INFO     dispatcher.py:172 - aiogram.event - Update id=199580174 is handled. Duration 15235 ms by bot id=8767157717
-[2026-08-09 12:40:24,556] #INFO     dispatcher.py:172 - aiogram.event - Update id=199580175 is not handled. Duration 0 ms by bot id=8767157717
-[2026-08-09 12:40:24,556] #ERROR    dispatcher.py:315 - aiogram.event - Cause exception while process update id=199580175 by bot id=8767157717
-TypeError: AsyncCompletions.create() got an unexpected keyword argument 'reasoning_effort'
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\handlers\talk.py", line 62, in answer_famous_person
+    role_text = f"""Ты отвечаешь в образе личности: {person["famous_person"]}.
+                                                     ~~~~~~^^^^^^^^^^^^^^^^^
+KeyError: 'famous_person'
+[2026-08-19 15:15:07,908] #INFO     dispatcher.py:172 - aiogram.event - Update id=337401366 is not handled. Duration 0 ms by bot id=8890857234
+[2026-08-19 15:15:07,908] #ERROR    dispatcher.py:315 - aiogram.event - Cause exception while process update id=337401366 by bot id=8890857234
+KeyError: 'famous_person'
 Traceback (most recent call last):
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
     response = await self.feed_update(bot, update, **kwargs)
                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
     response = await self.update.wrap_outer_middleware(
                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
     return await handler(event, data)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 27, in __call__
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 27, in __call__
     return await handler(event, data)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\fsm\middleware.py", line 41, in __call__
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\fsm\middleware.py", line 41, in __call__
     return await handler(event, data)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
     return await wrapped_inner(event, kwargs)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
     return await wrapped()
            ^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
     return await self.propagate_event(update_type=update_type, event=event, **kwargs)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 128, in propagate_event
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 128, in propagate_event
     return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 123, in _wrapped
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 123, in _wrapped
     return await self._propagate_event(
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 156, in _propagate_event
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 156, in _propagate_event
     response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 128, in propagate_event
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 128, in propagate_event
     return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 123, in _wrapped
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 123, in _wrapped
     return await self._propagate_event(
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 148, in _propagate_event
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 148, in _propagate_event
     response = await observer.trigger(event, **kwargs)
                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
     return await wrapped_inner(event, kwargs)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
     return await wrapped()
            ^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\handlers\ai_chats.py", line 83, in answer_deepseek
-    answer = await chat_deepseek_service.ask_deepseek(
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\services\chat_deepseek.py", line 9, in ask_deepseek
-    response = await self.client.chat.completions.create(
-                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\openai\_utils\_utils.py", line 275, in wrapper
-    return func(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^
-TypeError: AsyncCompletions.create() got an unexpected keyword argument 'reasoning_effort'
-[2026-08-09 12:41:56,730] #INFO     dispatcher.py:172 - aiogram.event - Update id=199580176 is handled. Duration 1203 ms by bot id=8767157717
-[2026-08-09 12:42:12,570] #INFO     dispatcher.py:172 - aiogram.event - Update id=199580177 is handled. Duration 766 ms by bot id=8767157717
-[2026-08-09 12:42:15,953] #INFO     dispatcher.py:172 - aiogram.event - Update id=199580178 is handled. Duration 77 ms by bot id=8767157717
-[2026-08-09 12:48:05,424] #INFO     dispatcher.py:554 - aiogram.dispatcher - Polling stopped
-[2026-08-09 12:48:05,678] #INFO     dispatcher.py:359 - aiogram.dispatcher - Polling stopped for bot @PyRushBot id=8767157717 - 'PyRush'
-[2026-08-09 12:50:26,391] #INFO     dispatcher.py:527 - aiogram.dispatcher - Start polling
-[2026-08-09 12:50:26,601] #INFO     dispatcher.py:341 - aiogram.dispatcher - Run polling for bot @PyRushBot id=8767157717 - 'PyRush'
-[2026-08-09 12:50:50,600] #INFO     dispatcher.py:172 - aiogram.event - Update id=199580179 is handled. Duration 968 ms by bot id=8767157717
-[2026-08-09 12:50:57,289] #INFO     _client.py:1740 - httpx - HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
-[2026-08-09 12:51:08,548] #INFO     dispatcher.py:172 - aiogram.event - Update id=199580180 is handled. Duration 12437 ms by bot id=8767157717
-[2026-08-09 12:51:13,765] #INFO     dispatcher.py:172 - aiogram.event - Update id=199580181 is handled. Duration 77 ms by bot id=8767157717
-[2026-08-09 12:51:19,749] #INFO     _client.py:1740 - httpx - HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
-[2026-08-09 12:51:22,995] #INFO     dispatcher.py:172 - aiogram.event - Update id=199580182 is handled. Duration 3719 ms by bot id=8767157717
-[2026-08-09 12:51:35,335] #INFO     dispatcher.py:172 - aiogram.event - Update id=199580183 is handled. Duration 1327 ms by bot id=8767157717
-[2026-08-09 12:53:13,426] #INFO     random_fact.py:37 - handlers.random_fact - Отладка: метод command_random |
-[2026-08-09 12:53:14,821] #INFO     _client.py:1740 - httpx - HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
-[2026-08-09 12:54:03,384] #INFO     dispatcher.py:172 - aiogram.event - Update id=199580184 is handled. Duration 49953 ms by bot id=8767157717
-[2026-08-09 12:54:13,884] #INFO     random_fact.py:37 - handlers.random_fact - Отладка: метод command_random |
-[2026-08-09 12:54:20,882] #INFO     _client.py:1740 - httpx - HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
-[2026-08-09 12:54:50,446] #INFO     dispatcher.py:172 - aiogram.event - Update id=199580185 is handled. Duration 36562 ms by bot id=8767157717
-[2026-08-09 12:54:53,514] #INFO     dispatcher.py:172 - aiogram.event - Update id=199580186 is handled. Duration 155 ms by bot id=8767157717
-[2026-08-09 12:54:56,917] #INFO     dispatcher.py:172 - aiogram.event - Update id=199580187 is handled. Duration 671 ms by bot id=8767157717
-[2026-08-09 12:55:05,958] #INFO     _client.py:1740 - httpx - HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
-[2026-08-09 12:55:11,236] #INFO     dispatcher.py:172 - aiogram.event - Update id=199580188 is handled. Duration 5750 ms by bot id=8767157717
-[2026-08-09 12:55:28,137] #INFO     dispatcher.py:172 - aiogram.event - Update id=199580189 is handled. Duration 202 ms by bot id=8767157717
-[2026-08-09 12:55:32,088] #INFO     talk.py:38 - root - Отладка: метод command_choose_famous_person |
-[2026-08-09 12:55:32,156] #INFO     dispatcher.py:172 - aiogram.event - Update id=199580190 is handled. Duration 78 ms by bot id=8767157717
-[2026-08-09 12:55:34,767] #INFO     dispatcher.py:172 - aiogram.event - Update id=199580191 is handled. Duration 77 ms by bot id=8767157717
-[2026-08-09 12:55:37,259] #INFO     talk.py:38 - root - Отладка: метод command_choose_famous_person |
-[2026-08-09 12:55:37,334] #INFO     dispatcher.py:172 - aiogram.event - Update id=199580192 is handled. Duration 77 ms by bot id=8767157717
-[2026-08-09 12:55:39,813] #INFO     talk.py:47 - root - Отладка: метод callback_choosing_famous_person | Hawking
-[2026-08-09 12:55:41,100] #INFO     dispatcher.py:172 - aiogram.event - Update id=199580193 is handled. Duration 1280 ms by bot id=8767157717
-[2026-08-09 12:55:51,283] #INFO     _client.py:1740 - httpx - HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
-[2026-08-09 12:56:03,597] #INFO     dispatcher.py:172 - aiogram.event - Update id=199580194 is handled. Duration 12812 ms by bot id=8767157717
-[2026-08-09 12:56:13,021] #INFO     dispatcher.py:172 - aiogram.event - Update id=199580195 is handled. Duration 93 ms by bot id=8767157717
-[2026-08-09 12:56:19,058] #INFO     talk.py:38 - root - Отладка: метод command_choose_famous_person |
-[2026-08-09 12:56:19,147] #INFO     dispatcher.py:172 - aiogram.event - Update id=199580196 is handled. Duration 93 ms by bot id=8767157717
-[2026-08-09 12:56:20,839] #INFO     dispatcher.py:172 - aiogram.event - Update id=199580197 is handled. Duration 77 ms by bot id=8767157717
-[2026-08-09 12:56:23,831] #INFO     talk.py:38 - root - Отладка: метод command_choose_famous_person |
-[2026-08-09 12:56:23,917] #INFO     dispatcher.py:172 - aiogram.event - Update id=199580198 is handled. Duration 78 ms by bot id=8767157717
-[2026-08-09 12:56:25,578] #INFO     talk.py:47 - root - Отладка: метод callback_choosing_famous_person | Freud
-[2026-08-09 12:56:28,937] #INFO     dispatcher.py:172 - aiogram.event - Update id=199580199 is handled. Duration 3360 ms by bot id=8767157717
-[2026-08-09 12:56:41,365] #INFO     _client.py:1740 - httpx - HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
-[2026-08-09 12:56:57,286] #INFO     dispatcher.py:172 - aiogram.event - Update id=199580200 is handled. Duration 16437 ms by bot id=8767157717
-[2026-08-09 12:57:12,009] #INFO     dispatcher.py:172 - aiogram.event - Update id=199580201 is handled. Duration 78 ms by bot id=8767157717
-[2026-08-09 12:57:22,142] #INFO     quiz.py:40 - root - Отладка: метод command_choose_quiz |
-[2026-08-09 12:57:24,626] #INFO     dispatcher.py:172 - aiogram.event - Update id=199580202 is handled. Duration 2484 ms by bot id=8767157717
-[2026-08-09 12:57:27,060] #INFO     dispatcher.py:172 - aiogram.event - Update id=199580203 is handled. Duration 94 ms by bot id=8767157717
-[2026-08-09 12:57:31,570] #INFO     quiz.py:40 - root - Отладка: метод command_choose_quiz |
-[2026-08-09 12:57:31,810] #INFO     dispatcher.py:172 - aiogram.event - Update id=199580204 is handled. Duration 250 ms by bot id=8767157717
-[2026-08-09 12:57:35,249] #INFO     quiz.py:61 - root - Отладка: метод callback_choosing_quiz | Python_core_Q
-[2026-08-09 12:57:35,379] #INFO     dispatcher.py:172 - aiogram.event - Update id=199580205 is handled. Duration 125 ms by bot id=8767157717
-[2026-08-09 12:57:44,346] #INFO     quiz.py:50 - root - Отладка: метод callback_choosing_quiz | New_QuiZ
-[2026-08-09 12:57:44,537] #INFO     dispatcher.py:172 - aiogram.event - Update id=199580206 is handled. Duration 187 ms by bot id=8767157717
-[2026-08-09 12:57:46,933] #INFO     quiz.py:61 - root - Отладка: метод callback_choosing_quiz | aiogram_Q
-[2026-08-09 12:57:47,017] #INFO     dispatcher.py:172 - aiogram.event - Update id=199580207 is handled. Duration 93 ms by bot id=8767157717
-[2026-08-09 12:57:50,459] #INFO     _client.py:1740 - httpx - HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
-[2026-08-09 12:58:09,737] #INFO     dispatcher.py:172 - aiogram.event - Update id=199580208 is handled. Duration 19766 ms by bot id=8767157717
-[2026-08-09 12:58:12,074] #INFO     dispatcher.py:172 - aiogram.event - Update id=199580209 is handled. Duration 92 ms by bot id=8767157717
-[2026-08-09 12:58:19,463] #INFO     _client.py:1740 - httpx - HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
-[2026-08-09 12:58:35,110] #INFO     dispatcher.py:172 - aiogram.event - Update id=199580210 is handled. Duration 16109 ms by bot id=8767157717
-[2026-08-09 12:58:47,085] #INFO     dispatcher.py:172 - aiogram.event - Update id=199580211 is handled. Duration 77 ms by bot id=8767157717
-[2026-08-09 12:59:21,668] #INFO     quiz.py:50 - root - Отладка: метод callback_choosing_quiz | New_QuiZ
-[2026-08-09 12:59:22,113] #INFO     dispatcher.py:172 - aiogram.event - Update id=199580212 is handled. Duration 453 ms by bot id=8767157717
-[2026-08-09 12:59:23,750] #INFO     dispatcher.py:172 - aiogram.event - Update id=199580213 is handled. Duration 140 ms by bot id=8767157717
-[2026-08-09 12:59:28,142] #INFO     dispatcher.py:172 - aiogram.event - Update id=199580214 is handled. Duration 77 ms by bot id=8767157717
-[2026-08-09 12:59:38,405] #INFO     dispatcher.py:172 - aiogram.event - Update id=199580215 is handled. Duration 217 ms by bot id=8767157717
-[2026-08-09 12:59:44,238] #INFO     dispatcher.py:172 - aiogram.event - Update id=199580216 is handled. Duration 78 ms by bot id=8767157717
-[2026-08-09 12:59:49,390] #INFO     dispatcher.py:172 - aiogram.event - Update id=199580217 is handled. Duration 875 ms by bot id=8767157717
-[2026-08-09 12:59:58,141] #INFO     _client.py:1740 - httpx - HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
-[2026-08-09 13:00:03,718] #INFO     dispatcher.py:172 - aiogram.event - Update id=199580218 is handled. Duration 6078 ms by bot id=8767157717
-[2026-08-09 13:00:14,967] #INFO     dispatcher.py:172 - aiogram.event - Update id=199580219 is handled. Duration 78 ms by bot id=8767157717
-[2026-08-09 13:00:19,315] #INFO     dispatcher.py:172 - aiogram.event - Update id=199580220 is handled. Duration 78 ms by bot id=8767157717
-[2026-08-09 13:00:27,466] #INFO     _client.py:1740 - httpx - HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
-[2026-08-09 13:00:34,136] #INFO     dispatcher.py:172 - aiogram.event - Update id=199580221 is handled. Duration 7094 ms by bot id=8767157717
-[2026-08-09 13:00:42,449] #INFO     dispatcher.py:172 - aiogram.event - Update id=199580222 is handled. Duration 92 ms by bot id=8767157717
-[2026-08-09 13:00:50,022] #INFO     dispatcher.py:172 - aiogram.event - Update id=199580223 is handled. Duration 875 ms by bot id=8767157717
-[2026-08-09 13:00:53,787] #INFO     _client.py:1740 - httpx - HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
-[2026-08-09 13:01:00,530] #INFO     dispatcher.py:172 - aiogram.event - Update id=199580224 is handled. Duration 7171 ms by bot id=8767157717
-[2026-08-09 13:01:09,902] #INFO     dispatcher.py:172 - aiogram.event - Update id=199580225 is handled. Duration 77 ms by bot id=8767157717
-[2026-08-09 13:01:16,642] #INFO     dispatcher.py:172 - aiogram.event - Update id=199580226 is handled. Duration 750 ms by bot id=8767157717
-[2026-08-09 13:01:21,115] #INFO     dispatcher.py:172 - aiogram.event - Update id=199580227 is handled. Duration 750 ms by bot id=8767157717
-[2026-08-09 13:01:25,475] #INFO     dispatcher.py:172 - aiogram.event - Update id=199580228 is handled. Duration 937 ms by bot id=8767157717
-[2026-08-09 13:01:30,658] #INFO     dispatcher.py:172 - aiogram.event - Update id=199580229 is not handled. Duration 530 ms by bot id=8767157717
-[2026-08-09 13:01:30,658] #ERROR    dispatcher.py:315 - aiogram.event - Cause exception while process update id=199580229 by bot id=8767157717
-TypeError: string indices must be integers, not 'str'
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\handlers\talk.py", line 62, in answer_famous_person
+    role_text = f"""Ты отвечаешь в образе личности: {person["famous_person"]}.
+                                                     ~~~~~~^^^^^^^^^^^^^^^^^
+KeyError: 'famous_person'
+[2026-08-19 15:16:23,142] #INFO     dispatcher.py:554 - aiogram.dispatcher - Polling stopped
+[2026-08-19 15:16:23,404] #INFO     dispatcher.py:359 - aiogram.dispatcher - Polling stopped for bot @PyRushDevBot id=8890857234 - 'PyRushDev'
+[2026-08-19 15:16:29,325] #INFO     dispatcher.py:527 - aiogram.dispatcher - Start polling
+[2026-08-19 15:16:29,549] #INFO     dispatcher.py:341 - aiogram.dispatcher - Run polling for bot @PyRushDevBot id=8890857234 - 'PyRushDev'
+[2026-08-19 15:16:32,049] #INFO     talk.py:37 - root - Отладка: метод command_choose_famous_person |
+[2026-08-19 15:16:32,234] #INFO     dispatcher.py:172 - aiogram.event - Update id=337401367 is handled. Duration 187 ms by bot id=8890857234
+[2026-08-19 15:16:36,406] #INFO     dispatcher.py:172 - aiogram.event - Update id=337401368 is handled. Duration 1515 ms by bot id=8890857234
+[2026-08-19 15:16:53,622] #INFO     dispatcher.py:172 - aiogram.event - Update id=337401369 is handled. Duration 812 ms by bot id=8890857234
+[2026-08-19 15:16:57,115] #INFO     dispatcher.py:172 - aiogram.event - Update id=337401370 is handled. Duration 282 ms by bot id=8890857234
+[2026-08-19 15:16:59,804] #INFO     dispatcher.py:172 - aiogram.event - Update id=337401371 is handled. Duration 108 ms by bot id=8890857234
+[2026-08-19 15:17:01,812] #INFO     dispatcher.py:172 - aiogram.event - Update id=337401372 is handled. Duration 94 ms by bot id=8890857234
+[2026-08-19 15:17:06,810] #INFO     dispatcher.py:172 - aiogram.event - Update id=337401373 is not handled. Duration 0 ms by bot id=8890857234
+[2026-08-19 15:17:06,810] #ERROR    dispatcher.py:315 - aiogram.event - Cause exception while process update id=337401373 by bot id=8890857234
+KeyError: 'famous_person'
 Traceback (most recent call last):
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
     response = await self.feed_update(bot, update, **kwargs)
                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
     response = await self.update.wrap_outer_middleware(
                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
     return await handler(event, data)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 27, in __call__
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 27, in __call__
     return await handler(event, data)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\fsm\middleware.py", line 41, in __call__
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\fsm\middleware.py", line 41, in __call__
     return await handler(event, data)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
     return await wrapped_inner(event, kwargs)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
     return await wrapped()
            ^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
     return await self.propagate_event(update_type=update_type, event=event, **kwargs)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 128, in propagate_event
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 128, in propagate_event
     return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 123, in _wrapped
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 123, in _wrapped
     return await self._propagate_event(
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 156, in _propagate_event
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 156, in _propagate_event
     response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 128, in propagate_event
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 128, in propagate_event
     return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 123, in _wrapped
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 123, in _wrapped
     return await self._propagate_event(
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 148, in _propagate_event
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 148, in _propagate_event
     response = await observer.trigger(event, **kwargs)
                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
     return await wrapped_inner(event, kwargs)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
     return await wrapped()
            ^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\handlers\http_cat.py", line 48, in command_http_cat_2
-    await message.answer(code_info["image"])
-                         ~~~~~~~~~^^^^^^^^^
-TypeError: string indices must be integers, not 'str'
-[2026-08-09 13:02:17,062] #INFO     dispatcher.py:172 - aiogram.event - Update id=199580230 is handled. Duration 219 ms by bot id=8767157717
-[2026-08-09 13:02:21,279] #INFO     dispatcher.py:172 - aiogram.event - Update id=199580231 is not handled. Duration 500 ms by bot id=8767157717
-[2026-08-09 13:02:21,279] #ERROR    dispatcher.py:315 - aiogram.event - Cause exception while process update id=199580231 by bot id=8767157717
-TypeError: string indices must be integers, not 'str'
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\handlers\talk.py", line 62, in answer_famous_person
+    role_text = f"""Ты отвечаешь в образе личности: {person["famous_person"]}.
+                                                     ~~~~~~^^^^^^^^^^^^^^^^^
+KeyError: 'famous_person'
+[2026-08-19 15:17:19,958] #INFO     dispatcher.py:554 - aiogram.dispatcher - Polling stopped
+[2026-08-19 15:17:20,221] #INFO     dispatcher.py:359 - aiogram.dispatcher - Polling stopped for bot @PyRushDevBot id=8890857234 - 'PyRushDev'
+[2026-08-19 15:17:26,235] #INFO     dispatcher.py:527 - aiogram.dispatcher - Start polling
+[2026-08-19 15:17:26,391] #INFO     dispatcher.py:341 - aiogram.dispatcher - Run polling for bot @PyRushDevBot id=8890857234 - 'PyRushDev'
+[2026-08-19 15:17:31,725] #INFO     talk.py:37 - root - Отладка: метод command_choose_famous_person |
+[2026-08-19 15:17:31,948] #INFO     dispatcher.py:172 - aiogram.event - Update id=337401374 is handled. Duration 235 ms by bot id=8890857234
+[2026-08-19 15:17:42,962] #INFO     dispatcher.py:172 - aiogram.event - Update id=337401375 is handled. Duration 77 ms by bot id=8890857234
+[2026-08-19 15:21:10,762] #INFO     quiz.py:40 - root - Отладка: метод command_choose_quiz |
+[2026-08-19 15:21:11,360] #INFO     dispatcher.py:172 - aiogram.event - Update id=337401376 is handled. Duration 593 ms by bot id=8890857234
+[2026-08-19 15:22:00,172] #INFO     talk.py:37 - root - Отладка: метод command_choose_famous_person |
+[2026-08-19 15:22:00,357] #INFO     dispatcher.py:172 - aiogram.event - Update id=337401377 is handled. Duration 187 ms by bot id=8890857234
+[2026-08-19 15:22:28,553] #INFO     quiz.py:40 - root - Отладка: метод command_choose_quiz |
+[2026-08-19 15:22:29,038] #INFO     dispatcher.py:172 - aiogram.event - Update id=337401378 is handled. Duration 483 ms by bot id=8890857234
+[2026-08-19 15:22:39,045] #INFO     talk.py:37 - root - Отладка: метод command_choose_famous_person |
+[2026-08-19 15:22:39,140] #INFO     dispatcher.py:172 - aiogram.event - Update id=337401379 is handled. Duration 94 ms by bot id=8890857234
+[2026-08-19 15:22:52,418] #INFO     quiz.py:40 - root - Отладка: метод command_choose_quiz |
+[2026-08-19 15:22:52,645] #INFO     dispatcher.py:172 - aiogram.event - Update id=337401380 is handled. Duration 234 ms by bot id=8890857234
+[2026-08-19 15:23:16,573] #INFO     random_fact.py:37 - handlers.random_fact - Отладка: метод command_random |
+[2026-08-19 15:23:19,053] #INFO     _client.py:1740 - httpx - HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+[2026-08-19 15:23:46,859] #INFO     dispatcher.py:172 - aiogram.event - Update id=337401381 is handled. Duration 30280 ms by bot id=8890857234
+[2026-08-19 15:25:07,252] #INFO     random_fact.py:37 - handlers.random_fact - Отладка: метод command_random |
+[2026-08-19 15:25:08,582] #INFO     _client.py:1740 - httpx - HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+[2026-08-19 15:25:44,170] #INFO     dispatcher.py:172 - aiogram.event - Update id=337401382 is handled. Duration 36921 ms by bot id=8890857234
+[2026-08-19 15:25:46,827] #INFO     dispatcher.py:172 - aiogram.event - Update id=337401383 is handled. Duration 172 ms by bot id=8890857234
+[2026-08-19 15:26:00,148] #INFO     dispatcher.py:172 - aiogram.event - Update id=337401384 is handled. Duration 93 ms by bot id=8890857234
+[2026-08-19 15:26:32,810] #INFO     dispatcher.py:172 - aiogram.event - Update id=337401385 is handled. Duration 187 ms by bot id=8890857234
+[2026-08-19 15:27:38,958] #INFO     quiz.py:40 - root - Отладка: метод command_choose_quiz |
+[2026-08-19 15:27:39,388] #INFO     dispatcher.py:172 - aiogram.event - Update id=337401386 is handled. Duration 437 ms by bot id=8890857234
+[2026-08-19 15:27:55,812] #INFO     talk.py:37 - root - Отладка: метод command_choose_famous_person |
+[2026-08-19 15:27:56,005] #INFO     dispatcher.py:172 - aiogram.event - Update id=337401387 is handled. Duration 203 ms by bot id=8890857234
+[2026-08-19 15:28:02,221] #INFO     dispatcher.py:172 - aiogram.event - Update id=337401388 is not handled. Duration 0 ms by bot id=8890857234
+[2026-08-19 15:28:02,221] #ERROR    dispatcher.py:315 - aiogram.event - Cause exception while process update id=337401388 by bot id=8890857234
+KeyError: 'famous_person'
 Traceback (most recent call last):
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
     response = await self.feed_update(bot, update, **kwargs)
                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
     response = await self.update.wrap_outer_middleware(
                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
     return await handler(event, data)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 27, in __call__
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 27, in __call__
     return await handler(event, data)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\fsm\middleware.py", line 41, in __call__
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\fsm\middleware.py", line 41, in __call__
     return await handler(event, data)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
     return await wrapped_inner(event, kwargs)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
     return await wrapped()
            ^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
     return await self.propagate_event(update_type=update_type, event=event, **kwargs)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 128, in propagate_event
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 128, in propagate_event
     return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 123, in _wrapped
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 123, in _wrapped
     return await self._propagate_event(
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 156, in _propagate_event
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 156, in _propagate_event
     response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 128, in propagate_event
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 128, in propagate_event
     return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 123, in _wrapped
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 123, in _wrapped
     return await self._propagate_event(
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 148, in _propagate_event
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 148, in _propagate_event
     response = await observer.trigger(event, **kwargs)
                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
     return await wrapped_inner(event, kwargs)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
     return await wrapped()
            ^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\handlers\http_cat.py", line 48, in command_http_cat_2
-    await message.answer(code_info["image"])
-                         ~~~~~~~~~^^^^^^^^^
-TypeError: string indices must be integers, not 'str'
-[2026-08-09 13:02:48,844] #INFO     dispatcher.py:172 - aiogram.event - Update id=199580232 is handled. Duration 187 ms by bot id=8767157717
-[2026-08-09 13:02:59,790] #INFO     dispatcher.py:172 - aiogram.event - Update id=199580233 is handled. Duration 108 ms by bot id=8767157717
-[2026-08-09 13:03:05,201] #INFO     dispatcher.py:172 - aiogram.event - Update id=199580234 is handled. Duration 77 ms by bot id=8767157717
-[2026-08-09 13:03:09,295] #INFO     dispatcher.py:172 - aiogram.event - Update id=199580235 is not handled. Duration 516 ms by bot id=8767157717
-[2026-08-09 13:03:09,295] #ERROR    dispatcher.py:315 - aiogram.event - Cause exception while process update id=199580235 by bot id=8767157717
-TypeError: string indices must be integers, not 'str'
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\handlers\talk.py", line 62, in answer_famous_person
+    role_text = f"""Ты отвечаешь в образе личности: {person["famous_person"]}.
+                                                     ~~~~~~^^^^^^^^^^^^^^^^^
+KeyError: 'famous_person'
+[2026-08-19 15:31:55,721] #INFO     talk.py:37 - root - Отладка: метод command_choose_famous_person |
+[2026-08-19 15:31:55,972] #INFO     dispatcher.py:172 - aiogram.event - Update id=337401389 is handled. Duration 250 ms by bot id=8890857234
+[2026-08-19 15:32:00,234] #INFO     dispatcher.py:172 - aiogram.event - Update id=337401390 is not handled. Duration 0 ms by bot id=8890857234
+[2026-08-19 15:32:00,234] #ERROR    dispatcher.py:315 - aiogram.event - Cause exception while process update id=337401390 by bot id=8890857234
+KeyError: 'famous_person'
 Traceback (most recent call last):
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
     response = await self.feed_update(bot, update, **kwargs)
                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
     response = await self.update.wrap_outer_middleware(
                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
     return await handler(event, data)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 27, in __call__
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 27, in __call__
     return await handler(event, data)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\fsm\middleware.py", line 41, in __call__
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\fsm\middleware.py", line 41, in __call__
     return await handler(event, data)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
     return await wrapped_inner(event, kwargs)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
     return await wrapped()
            ^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
     return await self.propagate_event(update_type=update_type, event=event, **kwargs)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 128, in propagate_event
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 128, in propagate_event
     return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 123, in _wrapped
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 123, in _wrapped
     return await self._propagate_event(
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 156, in _propagate_event
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 156, in _propagate_event
     response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 128, in propagate_event
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 128, in propagate_event
     return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 123, in _wrapped
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 123, in _wrapped
     return await self._propagate_event(
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 148, in _propagate_event
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 148, in _propagate_event
     response = await observer.trigger(event, **kwargs)
                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
     return await wrapped_inner(event, kwargs)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
     return await wrapped()
            ^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\handlers\http_cat.py", line 48, in command_http_cat_2
-    await message.answer(code_info["image"])
-                         ~~~~~~~~~^^^^^^^^^
-TypeError: string indices must be integers, not 'str'
-[2026-08-09 13:04:19,786] #INFO     dispatcher.py:554 - aiogram.dispatcher - Polling stopped
-[2026-08-09 13:04:20,044] #INFO     dispatcher.py:359 - aiogram.dispatcher - Polling stopped for bot @PyRushBot id=8767157717 - 'PyRush'
-[2026-08-09 13:15:01,459] #INFO     dispatcher.py:527 - aiogram.dispatcher - Start polling
-[2026-08-09 13:15:01,670] #INFO     dispatcher.py:341 - aiogram.dispatcher - Run polling for bot @PyRushBot id=8767157717 - 'PyRush'
-[2026-08-09 13:15:06,735] #INFO     dispatcher.py:172 - aiogram.event - Update id=199580236 is handled. Duration 219 ms by bot id=8767157717
-[2026-08-09 13:15:12,828] #INFO     dispatcher.py:172 - aiogram.event - Update id=199580237 is handled. Duration 842 ms by bot id=8767157717
-[2026-08-09 13:15:56,765] #INFO     dispatcher.py:172 - aiogram.event - Update id=199580238 is handled. Duration 905 ms by bot id=8767157717
-[2026-08-09 13:20:05,042] #INFO     dispatcher.py:172 - aiogram.event - Update id=199580239 is handled. Duration 937 ms by bot id=8767157717
-[2026-08-09 13:21:07,226] #ERROR    dispatcher.py:219 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientOSError: [WinError 1236] Подключение к сети было разорвано локальной системой
-[2026-08-09 13:21:07,226] #WARNING  dispatcher.py:221 - aiogram.dispatcher - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8767157717)
-[2026-08-09 13:21:11,659] #INFO     dispatcher.py:554 - aiogram.dispatcher - Polling stopped
-[2026-08-09 13:21:11,930] #INFO     dispatcher.py:359 - aiogram.dispatcher - Polling stopped for bot @PyRushBot id=8767157717 - 'PyRush'
-[2026-08-09 13:21:21,262] #INFO     dispatcher.py:527 - aiogram.dispatcher - Start polling
-[2026-08-09 13:22:22,249] #INFO     dispatcher.py:554 - aiogram.dispatcher - Polling stopped
-[2026-08-09 13:22:56,718] #INFO     dispatcher.py:527 - aiogram.dispatcher - Start polling
-[2026-08-09 13:22:57,032] #INFO     dispatcher.py:341 - aiogram.dispatcher - Run polling for bot @PyRushBot id=8767157717 - 'PyRush'
-[2026-08-09 13:22:58,757] #INFO     dispatcher.py:172 - aiogram.event - Update id=199580240 is handled. Duration 1625 ms by bot id=8767157717
-[2026-08-09 13:23:06,306] #INFO     dispatcher.py:172 - aiogram.event - Update id=199580241 is handled. Duration 1031 ms by bot id=8767157717
-[2026-08-09 13:24:54,712] #INFO     dispatcher.py:554 - aiogram.dispatcher - Polling stopped
-[2026-08-09 13:24:54,977] #INFO     dispatcher.py:359 - aiogram.dispatcher - Polling stopped for bot @PyRushBot id=8767157717 - 'PyRush'
-[2026-08-09 13:25:05,376] #INFO     dispatcher.py:527 - aiogram.dispatcher - Start polling
-[2026-08-09 13:25:05,701] #INFO     dispatcher.py:341 - aiogram.dispatcher - Run polling for bot @PyRushBot id=8767157717 - 'PyRush'
-[2026-08-09 13:25:10,531] #INFO     dispatcher.py:172 - aiogram.event - Update id=199580242 is handled. Duration 1187 ms by bot id=8767157717
-[2026-08-09 13:27:05,060] #INFO     dispatcher.py:554 - aiogram.dispatcher - Polling stopped
-[2026-08-09 13:27:05,313] #INFO     dispatcher.py:359 - aiogram.dispatcher - Polling stopped for bot @PyRushBot id=8767157717 - 'PyRush'
-[2026-08-09 13:27:12,035] #INFO     dispatcher.py:527 - aiogram.dispatcher - Start polling
-[2026-08-09 13:27:12,443] #INFO     dispatcher.py:341 - aiogram.dispatcher - Run polling for bot @PyRushBot id=8767157717 - 'PyRush'
-[2026-08-09 13:27:22,008] #INFO     dispatcher.py:172 - aiogram.event - Update id=199580243 is handled. Duration 3984 ms by bot id=8767157717
-[2026-08-09 13:27:26,932] #INFO     dispatcher.py:172 - aiogram.event - Update id=199580244 is handled. Duration 858 ms by bot id=8767157717
-[2026-08-09 13:27:43,540] #INFO     dispatcher.py:554 - aiogram.dispatcher - Polling stopped
-[2026-08-09 13:27:43,800] #INFO     dispatcher.py:359 - aiogram.dispatcher - Polling stopped for bot @PyRushBot id=8767157717 - 'PyRush'
-[2026-08-09 14:04:14,218] #INFO     dispatcher.py:527 - aiogram.dispatcher - Start polling
-[2026-08-09 14:04:14,495] #INFO     dispatcher.py:341 - aiogram.dispatcher - Run polling for bot @PyRushBot id=8767157717 - 'PyRush'
-[2026-08-09 14:04:23,849] #INFO     _client.py:1740 - httpx - HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
-[2026-08-09 14:04:32,156] #INFO     dispatcher.py:172 - aiogram.event - Update id=199580245 is handled. Duration 9562 ms by bot id=8767157717
-[2026-08-09 14:05:24,037] #INFO     dispatcher.py:172 - aiogram.event - Update id=199580246 is handled. Duration 390 ms by bot id=8767157717
-[2026-08-09 14:05:33,613] #INFO     _client.py:1740 - httpx - HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
-[2026-08-09 14:05:43,100] #INFO     dispatcher.py:172 - aiogram.event - Update id=199580247 is handled. Duration 10030 ms by bot id=8767157717
-[2026-08-09 14:06:00,034] #INFO     dispatcher.py:172 - aiogram.event - Update id=199580248 is handled. Duration 671 ms by bot id=8767157717
-[2026-08-09 14:06:05,531] #INFO     dispatcher.py:172 - aiogram.event - Update id=199580249 is handled. Duration 108 ms by bot id=8767157717
-[2026-08-09 14:06:12,977] #INFO     dispatcher.py:172 - aiogram.event - Update id=199580250 is handled. Duration 93 ms by bot id=8767157717
-[2026-08-09 14:06:23,352] #INFO     dispatcher.py:172 - aiogram.event - Update id=199580251 is handled. Duration 218 ms by bot id=8767157717
-[2026-08-09 14:06:27,427] #INFO     dispatcher.py:172 - aiogram.event - Update id=199580252 is handled. Duration 108 ms by bot id=8767157717
-[2026-08-09 14:06:33,134] #INFO     dispatcher.py:172 - aiogram.event - Update id=199580253 is handled. Duration 94 ms by bot id=8767157717
-[2026-08-09 14:06:34,569] #INFO     dispatcher.py:172 - aiogram.event - Update id=199580254 is handled. Duration 187 ms by bot id=8767157717
-[2026-08-09 14:06:38,911] #INFO     dispatcher.py:172 - aiogram.event - Update id=199580255 is handled. Duration 92 ms by bot id=8767157717
-[2026-08-09 14:06:43,697] #INFO     dispatcher.py:172 - aiogram.event - Update id=199580256 is not handled. Duration 0 ms by bot id=8767157717
-[2026-08-09 14:06:43,697] #ERROR    dispatcher.py:315 - aiogram.event - Cause exception while process update id=199580256 by bot id=8767157717
-AttributeError: 'str' object has no attribute 'text'
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\handlers\talk.py", line 62, in answer_famous_person
+    role_text = f"""Ты отвечаешь в образе личности: {person["famous_person"]}.
+                                                     ~~~~~~^^^^^^^^^^^^^^^^^
+KeyError: 'famous_person'
+[2026-08-19 15:32:38,121] #INFO     dispatcher.py:172 - aiogram.event - Update id=337401391 is not handled. Duration 0 ms by bot id=8890857234
+[2026-08-19 15:32:38,121] #ERROR    dispatcher.py:315 - aiogram.event - Cause exception while process update id=337401391 by bot id=8890857234
+KeyError: 'famous_person'
 Traceback (most recent call last):
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
     response = await self.feed_update(bot, update, **kwargs)
                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
     response = await self.update.wrap_outer_middleware(
                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
     return await handler(event, data)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 27, in __call__
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 27, in __call__
     return await handler(event, data)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\fsm\middleware.py", line 41, in __call__
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\fsm\middleware.py", line 41, in __call__
     return await handler(event, data)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
     return await wrapped_inner(event, kwargs)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
     return await wrapped()
            ^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
     return await self.propagate_event(update_type=update_type, event=event, **kwargs)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 128, in propagate_event
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 128, in propagate_event
     return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 123, in _wrapped
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 123, in _wrapped
     return await self._propagate_event(
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 156, in _propagate_event
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 156, in _propagate_event
     response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 128, in propagate_event
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 128, in propagate_event
     return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 123, in _wrapped
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 123, in _wrapped
     return await self._propagate_event(
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 148, in _propagate_event
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 148, in _propagate_event
     response = await observer.trigger(event, **kwargs)
                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
     return await wrapped_inner(event, kwargs)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
     return await wrapped()
            ^^^^^^^^^^^^^^^
-  File "C:\Users\79688\Documents\dev\Py\PyBotStep4\handlers\http_cat.py", line 43, in answer_http_cat
-    if m.isdigit() and 100 <= int(m.text) <= 599:
-                                  ^^^^^^
-AttributeError: 'str' object has no attribute 'text'
-[2026-08-09 14:07:34,000] #INFO     dispatcher.py:554 - aiogram.dispatcher - Polling stopped
-[2026-08-09 14:07:34,051] #ERROR    dispatcher.py:219 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientOSError: [Errno 1] [SSL: APPLICATION_DATA_AFTER_CLOSE_NOTIFY] application data after close notify (_ssl.c:2685)
-[2026-08-09 14:07:34,052] #WARNING  dispatcher.py:221 - aiogram.dispatcher - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8767157717)
-[2026-08-09 14:07:34,260] #INFO     dispatcher.py:359 - aiogram.dispatcher - Polling stopped for bot @PyRushBot id=8767157717 - 'PyRush'
-[2026-08-09 14:07:40,810] #INFO     dispatcher.py:527 - aiogram.dispatcher - Start polling
-[2026-08-09 14:07:41,051] #INFO     dispatcher.py:341 - aiogram.dispatcher - Run polling for bot @PyRushBot id=8767157717 - 'PyRush'
-[2026-08-09 14:07:51,598] #INFO     dispatcher.py:172 - aiogram.event - Update id=199580257 is handled. Duration 358 ms by bot id=8767157717
-[2026-08-09 14:07:53,344] #INFO     dispatcher.py:172 - aiogram.event - Update id=199580258 is handled. Duration 108 ms by bot id=8767157717
-[2026-08-09 14:08:00,237] #INFO     dispatcher.py:172 - aiogram.event - Update id=199580259 is handled. Duration 969 ms by bot id=8767157717
-[2026-08-09 14:08:07,564] #INFO     dispatcher.py:172 - aiogram.event - Update id=199580260 is handled. Duration 812 ms by bot id=8767157717
-[2026-08-09 14:08:13,669] #INFO     dispatcher.py:172 - aiogram.event - Update id=199580261 is handled. Duration 94 ms by bot id=8767157717
-[2026-08-09 14:08:17,375] #INFO     _client.py:1740 - httpx - HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
-[2026-08-09 14:08:21,833] #INFO     dispatcher.py:172 - aiogram.event - Update id=199580262 is handled. Duration 5687 ms by bot id=8767157717
-[2026-08-09 14:08:26,977] #INFO     dispatcher.py:172 - aiogram.event - Update id=199580263 is handled. Duration 93 ms by bot id=8767157717
-[2026-08-09 14:08:34,415] #INFO     dispatcher.py:172 - aiogram.event - Update id=199580264 is handled. Duration 125 ms by bot id=8767157717
-[2026-08-09 14:14:23,678] #INFO     dispatcher.py:554 - aiogram.dispatcher - Polling stopped
-[2026-08-09 14:14:23,942] #INFO     dispatcher.py:359 - aiogram.dispatcher - Polling stopped for bot @PyRushBot id=8767157717 - 'PyRush'
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\handlers\talk.py", line 62, in answer_famous_person
+    role_text = f"""Ты отвечаешь в образе личности: {person["famous_person"]}.
+                                                     ~~~~~~^^^^^^^^^^^^^^^^^
+KeyError: 'famous_person'
+[2026-08-19 15:32:54,018] #INFO     _client.py:1740 - httpx - HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+[2026-08-19 15:32:59,890] #INFO     dispatcher.py:172 - aiogram.event - Update id=337401392 is handled. Duration 6359 ms by bot id=8890857234
+[2026-08-19 15:33:06,994] #INFO     talk.py:37 - root - Отладка: метод command_choose_famous_person |
+[2026-08-19 15:33:07,069] #INFO     dispatcher.py:172 - aiogram.event - Update id=337401393 is handled. Duration 78 ms by bot id=8890857234
+[2026-08-19 15:35:07,348] #INFO     dispatcher.py:172 - aiogram.event - Update id=337401394 is not handled. Duration 16 ms by bot id=8890857234
+[2026-08-19 15:35:07,348] #ERROR    dispatcher.py:315 - aiogram.event - Cause exception while process update id=337401394 by bot id=8890857234
+KeyError: 'famous_person'
+Traceback (most recent call last):
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 27, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\fsm\middleware.py", line 41, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 128, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 123, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 156, in _propagate_event
+    response = await router.propagate_event(update_type=update_type, event=event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 128, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 123, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\dispatcher\router.py", line 148, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\.venv\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\79688\Documents\dev\Py\PyMentorBot\handlers\talk.py", line 62, in answer_famous_person
+    role_text = f"""Ты отвечаешь в образе личности: {person["famous_person"]}.
+                                                     ~~~~~~^^^^^^^^^^^^^^^^^
+KeyError: 'famous_person'
+[2026-08-19 15:35:36,820] #INFO     quiz.py:40 - root - Отладка: метод command_choose_quiz |
+[2026-08-19 15:35:37,361] #INFO     dispatcher.py:172 - aiogram.event - Update id=337401395 is handled. Duration 546 ms by bot id=8890857234
+[2026-08-19 15:35:43,281] #INFO     talk.py:37 - root - Отладка: метод command_choose_famous_person |
+[2026-08-19 15:35:43,505] #INFO     dispatcher.py:172 - aiogram.event - Update id=337401396 is handled. Duration 234 ms by bot id=8890857234
+[2026-08-19 15:36:06,434] #INFO     quiz.py:40 - root - Отладка: метод command_choose_quiz |
+[2026-08-19 15:36:06,902] #INFO     dispatcher.py:172 - aiogram.event - Update id=337401397 is handled. Duration 468 ms by bot id=8890857234
+[2026-08-19 15:36:22,692] #INFO     dispatcher.py:172 - aiogram.event - Update id=337401398 is handled. Duration 266 ms by bot id=8890857234
+[2026-08-19 15:36:42,975] #INFO     quiz.py:40 - root - Отладка: метод command_choose_quiz |
+[2026-08-19 15:36:43,412] #INFO     dispatcher.py:172 - aiogram.event - Update id=337401399 is handled. Duration 453 ms by bot id=8890857234
+[2026-08-19 15:36:51,199] #INFO     quiz.py:61 - root - Отладка: метод callback_choosing_quiz | HTTP_Q
+[2026-08-19 15:36:51,290] #INFO     dispatcher.py:172 - aiogram.event - Update id=337401400 is handled. Duration 92 ms by bot id=8890857234
+[2026-08-19 15:37:08,997] #INFO     dispatcher.py:172 - aiogram.event - Update id=337401401 is handled. Duration 234 ms by bot id=8890857234
+[2026-08-19 15:37:13,992] #INFO     quiz.py:40 - root - Отладка: метод command_choose_quiz |
+[2026-08-19 15:37:14,299] #INFO     dispatcher.py:172 - aiogram.event - Update id=337401402 is handled. Duration 312 ms by bot id=8890857234
+[2026-08-19 15:37:16,388] #INFO     quiz.py:61 - root - Отладка: метод callback_choosing_quiz | HTTP_Q
+[2026-08-19 15:37:16,458] #INFO     dispatcher.py:172 - aiogram.event - Update id=337401403 is handled. Duration 77 ms by bot id=8890857234
+[2026-08-19 15:37:18,889] #INFO     _client.py:1740 - httpx - HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+[2026-08-19 15:37:44,568] #INFO     dispatcher.py:172 - aiogram.event - Update id=337401404 is handled. Duration 26157 ms by bot id=8890857234
+[2026-08-19 15:37:52,180] #INFO     dispatcher.py:172 - aiogram.event - Update id=337401405 is handled. Duration 78 ms by bot id=8890857234
+[2026-08-19 15:38:11,422] #INFO     dispatcher.py:172 - aiogram.event - Update id=337401406 is handled. Duration 203 ms by bot id=8890857234
+[2026-08-19 15:39:09,990] #INFO     dispatcher.py:172 - aiogram.event - Update id=337401407 is handled. Duration 1750 ms by bot id=8890857234
+[2026-08-19 15:39:13,790] #INFO     dispatcher.py:172 - aiogram.event - Update id=337401408 is handled. Duration 78 ms by bot id=8890857234
+[2026-08-19 15:41:20,909] #INFO     dispatcher.py:172 - aiogram.event - Update id=337401409 is handled. Duration 265 ms by bot id=8890857234
+[2026-08-19 15:41:32,294] #INFO     talk.py:37 - root - Отладка: метод command_choose_famous_person |
+[2026-08-19 15:41:32,382] #INFO     dispatcher.py:172 - aiogram.event - Update id=337401410 is handled. Duration 94 ms by bot id=8890857234
+[2026-08-19 15:41:44,181] #INFO     dispatcher.py:172 - aiogram.event - Update id=337401411 is handled. Duration 94 ms by bot id=8890857234
+[2026-08-19 15:41:48,726] #INFO     dispatcher.py:172 - aiogram.event - Update id=337401412 is handled. Duration 93 ms by bot id=8890857234
+[2026-08-19 15:42:22,472] #INFO     quiz.py:40 - root - Отладка: метод command_choose_quiz |
+[2026-08-19 15:42:22,925] #INFO     dispatcher.py:172 - aiogram.event - Update id=337401413 is handled. Duration 453 ms by bot id=8890857234
+[2026-08-19 15:43:09,038] #INFO     _client.py:1740 - httpx - HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+[2026-08-19 15:43:14,898] #INFO     dispatcher.py:172 - aiogram.event - Update id=337401414 is handled. Duration 6343 ms by bot id=8890857234
+[2026-08-19 15:43:34,351] #INFO     _client.py:1740 - httpx - HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+[2026-08-19 15:43:39,601] #INFO     dispatcher.py:172 - aiogram.event - Update id=337401415 is handled. Duration 5733 ms by bot id=8890857234
+[2026-08-19 15:44:14,348] #INFO     dispatcher.py:172 - aiogram.event - Update id=337401416 is handled. Duration 217 ms by bot id=8890857234
+[2026-08-19 15:44:29,402] #INFO     dispatcher.py:172 - aiogram.event - Update id=337401417 is handled. Duration 155 ms by bot id=8890857234
+[2026-08-19 15:44:38,583] #INFO     _client.py:1740 - httpx - HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+[2026-08-19 15:44:41,396] #INFO     dispatcher.py:172 - aiogram.event - Update id=337401418 is handled. Duration 3296 ms by bot id=8890857234
+[2026-08-19 15:44:46,003] #INFO     dispatcher.py:172 - aiogram.event - Update id=337401419 is handled. Duration 109 ms by bot id=8890857234
+[2026-08-19 16:02:01,155] #ERROR    dispatcher.py:219 - aiogram.dispatcher - Failed to fetch updates - TelegramNetworkError: HTTP Client says - ClientOSError: [WinError 1236] Подключение к сети было разорвано локальной системой
+[2026-08-19 16:02:01,208] #WARNING  dispatcher.py:221 - aiogram.dispatcher - Sleep for 1.000000 seconds and try again... (tryings = 0, bot id = 8890857234)
+[2026-08-19 16:02:06,989] #INFO     dispatcher.py:554 - aiogram.dispatcher - Polling stopped
+[2026-08-19 16:02:07,243] #INFO     dispatcher.py:359 - aiogram.dispatcher - Polling stopped for bot @PyRushDevBot id=8890857234 - 'PyRushDev'
+[2026-08-19 22:59:05,306] #INFO     dispatcher.py:527 - aiogram.dispatcher - Start polling
+[2026-08-19 22:59:05,521] #INFO     dispatcher.py:341 - aiogram.dispatcher - Run polling for bot @PyRushDevBot id=8890857234 - 'PyRushDev'
+[2026-08-19 22:59:26,877] #INFO     dispatcher.py:554 - aiogram.dispatcher - Polling stopped
+[2026-08-19 22:59:27,129] #INFO     dispatcher.py:359 - aiogram.dispatcher - Polling stopped for bot @PyRushDevBot id=8890857234 - 'PyRushDev'
+[2026-08-19 22:59:40,087] #INFO     dispatcher.py:527 - aiogram.dispatcher - Start polling
+[2026-08-19 22:59:40,330] #INFO     dispatcher.py:341 - aiogram.dispatcher - Run polling for bot @PyRushDevBot id=8890857234 - 'PyRushDev'
+[2026-08-19 23:00:47,116] #INFO     dispatcher.py:554 - aiogram.dispatcher - Polling stopped
+[2026-08-19 23:00:47,382] #INFO     dispatcher.py:359 - aiogram.dispatcher - Polling stopped for bot @PyRushDevBot id=8890857234 - 'PyRushDev'
+[2026-08-19 23:00:52,951] #INFO     dispatcher.py:527 - aiogram.dispatcher - Start polling
+[2026-08-19 23:00:53,112] #INFO     dispatcher.py:341 - aiogram.dispatcher - Run polling for bot @PyRushDevBot id=8890857234 - 'PyRushDev'
+[2026-08-19 23:00:58,192] #INFO     dispatcher.py:172 - aiogram.event - Update id=337401420 is handled. Duration 328 ms by bot id=8890857234
+[2026-08-19 23:01:00,218] #INFO     dispatcher.py:172 - aiogram.event - Update id=337401421 is handled. Duration 92 ms by bot id=8890857234
+[2026-08-19 23:01:28,081] #INFO     dispatcher.py:172 - aiogram.event - Update id=337401422 is handled. Duration 250 ms by bot id=8890857234
+[2026-08-19 23:01:55,521] #INFO     dispatcher.py:554 - aiogram.dispatcher - Polling stopped
+[2026-08-19 23:01:55,776] #INFO     dispatcher.py:359 - aiogram.dispatcher - Polling stopped for bot @PyRushDevBot id=8890857234 - 'PyRushDev'
