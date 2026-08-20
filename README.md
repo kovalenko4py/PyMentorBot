@@ -11,6 +11,13 @@
 Но может быть полезен для проверки и закрепления знаний по основам python для начинающих изучать программирование.   
 Бот использует GPT и DeepSeek для ответов на вопросы.   
 Бот использует сайт [HTTP Cat](https://http.cat/) для демонстрации картинок котов с кодами HTTP и информацией об HTTP кодах.  
+-----
+## Содержание
+ - [Возможности](#возможности)   
+ - [Стек](#стек) 
+ - [Установка](#установка) 
+ - [Структура проекта](#структура-проекта) 
+ - [Планы развития](#todo) 
 
 
 ### Возможности
@@ -38,8 +45,8 @@
 ### Стек
 
 <div align="center">
-<img src="https://img.shields.io/badge/.ENV-ECD53F.svg?style=default&logo=dotenv&logoColor=black" alt=".ENV">
 <img src="https://img.shields.io/badge/Python-3776AB.svg?style=default&logo=Python&logoColor=white" alt="Python">
+<img src="https://img.shields.io/badge/.ENV-ECD53F.svg?style=default&logo=dotenv&logoColor=black" alt=".ENV">
 <img src="https://img.shields.io/badge/OpenAI-412991.svg?style=default&logo=OpenAI&logoColor=white" alt="OpenAI">
 <img src="https://img.shields.io/badge/redis-FF0000.svg?style=default&logo=redis&logoColor=white" alt="redis">
 </div>
@@ -56,19 +63,23 @@
 ### Установка
 
 ```bash
-git clone https://github.com/username/project-name.git
-cd project-name
+git clone https://github.com/kovalenko4py/PyMentorBot.git
+cd PyMentorBot
 pip install -r requirements.txt
 ```
 
 ### Настройка
-Создайте файл `.env` и заполните по примеру [env.example](env.example)
+Создайте файл `.env` и заполните по примеру [env.example](env.example)  
+Скачайте и запустите redis для корректной работы fms 
 
 
 ### Запуск
-```pwsh
+Запуск на локальной машине:
+```bash
 
-py .\main.py
+sudo service redis-server start
+python3 main.py
+
 ```
 
 ### Структура проекта

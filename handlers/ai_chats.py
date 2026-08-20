@@ -2,7 +2,7 @@ import logging
 import sys
 
 from aiogram import Router, types, F
-from aiogram.filters import StateFilter
+from aiogram.filters import StateFilter, Command
 from aiogram.fsm.context import FSMContext
 from states.base_state import FMSUser
 from aiogram.types import FSInputFile, Message
@@ -27,7 +27,7 @@ stdout_handler = logging.StreamHandler(sys.stdout)
 logger.addHandler(stdout_handler)
 logger.debug(f'Логер работает в модуле {logger.name}!')
 
-
+@router.message(Command('ask_gpt'))
 @router.callback_query(F.data == 'ask_gpt')
 async def callback_ask_gpt(callback: types.CallbackQuery, state: FSMContext):
     """Метод. На вход принимает текст 'ask_gpt'. Возвращает фото и ответ для старта общения с GPT."""
@@ -35,10 +35,15 @@ async def callback_ask_gpt(callback: types.CallbackQuery, state: FSMContext):
     print(f'Отладка: метод callback_ask_gpt ')
 
     image_ai = FSInputFile(ai())
-    await callback.message.answer_photo(image_ai)
+    if isinstance(callback, types.CallbackQuery):
+        message = callback.message
+    else:
+        message = callback
+
+    await message.answer_photo(image_ai)
     # answer = "GPT устал, пообщайся с DeepSeek, он еще бодрый." # если есть ключ GPT раскоментарить
     answer = "Чтобы задать вопрос GPT, напиши его в чате и отправь."  # если есть ключ GPT закоментарить
-    await callback.message.answer(f'{answer} ', reply_markup=inline_keyboard_gtp_stop)
+    await message.answer(f'{answer} ', reply_markup=inline_keyboard_gtp_stop)
     await state.set_state(FMSUser.ask_gpt)
 
 # TODO сделать условие: что-то с ключом - стандарт ответ,иначе - запрос к GPT
@@ -62,15 +67,19 @@ async def answer_gpt(message: types.Message, state: FSMContext, chat_gpt_service
         await message.answer(f'Держи ответ:\n{answer}', reply_markup=inline_keyboard_gtp_stop)
         await state.clear()  # если есть ключ GPT закоментарить и убрать 'state: FSMContext' во входящих параметрах
 
-
+@router.message(Command('ask_deepseek'))
 @router.callback_query(F.data == 'ask_deepseek')
 async def callback_ask_deepseek(callback: types.CallbackQuery, state: FSMContext):
     """Метод. На вход принимает текст 'ask_gpt'. Возвращает фото и ответ для старта общения с DeepSeek."""
     # отладка
     print(f'Отладка: метод callback_ask_deepseek ')
     image_ai = FSInputFile(ai())
-    await callback.message.answer_photo(image_ai)
-    await callback.message.answer('Чтобы задать вопрос DeepSeek, напиши его в чате и отправь.', reply_markup=inline_keyboard_undo)
+    if isinstance(callback, types.CallbackQuery):
+        message = callback.message
+    else:
+        message = callback
+    await message.answer_photo(image_ai)
+    await message.answer('Чтобы задать вопрос DeepSeek, напиши его в чате и отправь.', reply_markup=inline_keyboard_undo)
     await state.set_state(FMSUser.ask_deepseek)
 
 
