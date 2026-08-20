@@ -13,7 +13,6 @@ class ChatDeepseekService:
                 {"role": "user", "content": user_text_deepseek},
             ],
             stream=False,
-            reasoning_effort="high",
             extra_body={"thinking": {"type": "enabled"}}
         )
         answer = response.choices[0].message.content

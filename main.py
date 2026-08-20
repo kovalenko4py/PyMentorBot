@@ -1,6 +1,7 @@
 import logging
 from logging.handlers import TimedRotatingFileHandler
 import asyncio
+from pathlib import Path
 
 from aiogram import Bot, Dispatcher
 
@@ -29,11 +30,16 @@ async def main():
 
     formatter = logging.Formatter(fmt=form)
 
+    base_dir = Path(__file__).resolve().parent
+    log_dir = base_dir / "logs"
+    log_dir.mkdir(exist_ok=True)
+
     # Файл ТОЛЬКО для DEBUG
     log_debug = TimedRotatingFileHandler(
-        filename=r"logs\DebugLog.log",
+        filename=log_dir / "DebugLog.log",
         when='midnight',
         interval=1,
+        backupCount=14,
         encoding='utf-8'
     )
     log_debug.setLevel(logging.DEBUG)  # принимать всё от DEBUG и выше
@@ -42,16 +48,22 @@ async def main():
 
     # Файл для INFO и выше
     log_info = TimedRotatingFileHandler(
-        filename=r"logs\InfoLog.log",
+        filename=log_dir /"InfoLog.log",
         when='midnight',
         interval=1,
+        backupCount=14,
         encoding='utf-8'
     )
     log_info.setLevel(logging.INFO)  # отсекает DEBUG, пишет INFO+
     log_info.setFormatter(formatter)
 
+    console = logging.StreamHandler()
+    console.setLevel(logging.INFO)
+    console.setFormatter(formatter)
+
     logger.addHandler(log_debug)
     logger.addHandler(log_info)
+    logger.addHandler(console)
 
     bot = Bot(token=TOKEN_TG)
     dp = Dispatcher(storage=memory_fms)
@@ -66,11 +78,11 @@ async def main():
 
     dp.include_router(admin_commands.router)
     dp.include_router(base_commands.router)
-    dp.include_router(ai_chats.router)
     dp.include_router(talk.router)
     dp.include_router(quiz.router)
     dp.include_router(random_fact.router)
     dp.include_router(http_cat.router)
+    dp.include_router(ai_chats.router)
     dp.include_router(echo.router)
 
     await dp.start_polling(bot)
